@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politica de Confidentialitate – MP Group</title>
+  <meta name="description" content="Politica de confidentialitate si protectia datelor cu caracter personal la MP Group, conform Regulamentului GDPR (UE) 2016/679." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc2222; --red-dark: #a81c1c; --red-light: #fdeaea;
+      --black: #111111; --gray-dark: #333333; --gray-mid: #555555;
+      --gray-light: #888888; --gray-border: #e0e0e0; --gray-bg: #f7f7f7;
+      --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
+    .topbar-contact a:hover { text-decoration: underline; }
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 70px; gap: 32px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 220px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; transition: background 0.2s !important; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+    .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero-desc { font-size: 15px; color: #888; max-width: 620px; line-height: 1.7; }
+    .legal-body { max-width: 860px; margin: 0 auto; padding: 60px; }
+    .legal-body h2 { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--black); margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--red); }
+    .legal-body h3 { font-size: 14px; font-weight: 700; color: var(--black); margin: 20px 0 8px; }
+    .legal-body p { font-size: 14px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 12px; }
+    .legal-body ul, .legal-body ol { font-size: 14px; color: var(--gray-mid); line-height: 1.8; margin: 8px 0 12px 20px; }
+    .legal-body li { margin-bottom: 6px; }
+    .legal-body strong { color: var(--black); font-weight: 600; }
+    .legal-body a { color: var(--red); }
+    .legal-body a:hover { text-decoration: underline; }
+    .legal-update { font-size: 12px; color: var(--gray-light); margin-bottom: 32px; }
+    .legal-links { display: flex; gap: 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--gray-border); }
+    .legal-links a { font-size: 13px; color: var(--red); font-weight: 500; }
+    .legal-links a:hover { text-decoration: underline; }
+    footer { background: var(--black); padding: 48px 60px 28px; margin-top: 80px; }
+    .footer-inner { max-width: 1600px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #222; }
+    .footer-brand .logo img { height: 52px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 13px; color: #666; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: 11px; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 13px; color: #666; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 12px; color: #444; }
+    .footer-legal { display: flex; gap: 16px; }
+    .footer-legal a { font-size: 12px; color: #555; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--white); }
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .legal-body { padding: 36px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+      footer { padding: 48px 24px 28px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">021 332 0392</a>
+        <a href="tel:+40744652156">0744 652 156</a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+        <li><a href="sesizari.html">Sesizari</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40744652156">0744 652 156</a></div>
+        <a href="index.html#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Acasa</a><span class="breadcrumb-sep">/</span><span>Politica de Confidentialitate</span></div>
+      <h1>Politica de <em>Confidentialitate</em></h1>
+      <p class="page-hero-desc">Respectam confidentialitatea datelor dumneavoastra si ne angajam sa le prelucram in conformitate cu Regulamentul (UE) 2016/679 (GDPR).</p>
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <p class="legal-update">Ultima actualizare: 01 aprilie 2025</p>
+    <h2>1. Operatorul de date cu caracter personal</h2>
+    <p>Operatorul datelor cu caracter personal colectate prin acest site este <strong>MP Group</strong>, societate comerciala cu sediul in Bucuresti, Romania. Date de contact: <a href="tel:+40213320392">021 332 0392</a>, <a href="tel:+40744652156">0744 652 156</a>, <a href="mailto:contact@mpgroup.com.ro">contact@mpgroup.com.ro</a>.</p>
+    <p>MP Group prelucreaza datele cu caracter personal in conformitate cu prevederile <strong>Regulamentului (UE) 2016/679</strong> (GDPR) si ale <strong>Legii nr. 190/2018</strong> privind masurile de punere in aplicare a GDPR la nivel national.</p>
+    <h2>2. Datele colectate</h2>
+    <p>Prin intermediul formularului de contact si de solicitare a ofertei de pe site, colectam urmatoarele categorii de date cu caracter personal:</p>
+    <ul>
+      <li>Nume si prenume;</li>
+      <li>Adresa de e-mail;</li>
+      <li>Numar de telefon;</li>
+      <li>Adresa imobilului pentru care se solicita administrarea;</li>
+      <li>Numarul de apartamente;</li>
+      <li>Continutul mesajului transmis.</li>
+    </ul>
+    <p>Prin accesarea site-ului pot fi colectate automat date tehnice anonime (adresa IP, tipul de browser, paginile vizitate), in scopul asigurarii functionarii corecte a site-ului.</p>
+    <h2>3. Scopul si temeiul legal al prelucrarii</h2>
+    <p>Prelucram datele dumneavoastra in urmatoarele scopuri:</p>
+    <ul>
+      <li><strong>Raspunderea la solicitari si transmiterea de oferte</strong> — temeiul legal: art. 6 alin. (1) lit. (b) si (a) GDPR;</li>
+      <li><strong>Incheierea si executarea contractului de administrare</strong> — temeiul legal: art. 6 alin. (1) lit. (b) GDPR;</li>
+      <li><strong>Respectarea obligatiilor legale</strong> (contabile, fiscale) — temeiul legal: art. 6 alin. (1) lit. (c) GDPR;</li>
+      <li><strong>Interese legitime</strong> (securitatea site-ului) — temeiul legal: art. 6 alin. (1) lit. (f) GDPR.</li>
+    </ul>
+    <h2>4. Durata stocarii datelor</h2>
+    <p>Datele colectate prin formularul de contact sunt stocate pe durata necesara solutionarii solicitarii si ulterior pentru maximum <strong>3 ani</strong>. Datele prelucrate in baza unui contract de administrare se stocheaza pe durata contractului si pe perioada prevazuta de legislatia contabila (in general <strong>10 ani</strong>).</p>
+    <h2>5. Destinatarii datelor</h2>
+    <p>Datele dumneavoastra nu sunt vandute sau transmise comercial tertilor. Pot fi divulgate, in limitele strict necesare:</p>
+    <ul>
+      <li>Angajatilor si colaboratorilor MP Group implicati in prestarea serviciilor;</li>
+      <li>Furnizorilor de servicii IT (hosting, e-mail) care ofera garantii adecvate de protectie a datelor;</li>
+      <li>Autoritatilor publice sau instantelor judecatoresti, exclusiv in situatii prevazute de lege.</li>
+    </ul>
+    <h2>6. Drepturile dumneavoastra</h2>
+    <p>In calitate de persoana vizata, aveti urmatoarele drepturi conform GDPR:</p>
+    <ul>
+      <li><strong>Dreptul de acces</strong> — sa obtineti o copie a datelor prelucrate (art. 15 GDPR);</li>
+      <li><strong>Dreptul la rectificare</strong> — sa solicitati corectarea datelor inexacte (art. 16 GDPR);</li>
+      <li><strong>Dreptul la stergere</strong> — sa solicitati stergerea datelor (art. 17 GDPR);</li>
+      <li><strong>Dreptul la restrictionarea prelucrarii</strong> (art. 18 GDPR);</li>
+      <li><strong>Dreptul la portabilitatea datelor</strong> (art. 20 GDPR);</li>
+      <li><strong>Dreptul la opozitie</strong> (art. 21 GDPR);</li>
+      <li><strong>Dreptul de a retrage consimtamantul</strong> in orice moment.</li>
+    </ul>
+    <p>Pentru exercitarea acestor drepturi, contactati-ne la numerele de telefon afisate. Vom raspunde in termenul legal de <strong>30 de zile</strong>.</p>
+    <h2>7. Dreptul de a depune o plangere</h2>
+    <p>Daca considerati ca prelucrarea datelor dumneavoastra incalca prevederile GDPR, puteti depune o plangere la:</p>
+    <p><strong>Autoritatea Nationala de Supraveghere a Prelucrarii Datelor cu Caracter Personal (ANSPDCP)</strong><br>
+    B-dul G-ral. Gheorghe Magheru nr. 28-30, sector 1, Bucuresti<br>
+    Web: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a></p>
+    <h2>8. Contact</h2>
+    <p>Pentru orice intrebari privind protectia datelor: <a href="tel:+40213320392">021 332 0392</a>, <a href="tel:+40744652156">0744 652 156</a> sau <a href="mailto:contact@mpgroup.com.ro">contact@mpgroup.com.ro</a>.</p>
+    <div class="legal-links">
+      <a href="termeni.html">Termeni si Conditii</a>
+      <a href="cookies.html">Politica de Cookies</a>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+          <p>Servicii de administrare blocuri si imobile pentru asociatii de proprietari din Bucuresti si Ilfov. Activi din 1992.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Servicii</h5>
+          <ul>
+            <li><a href="administrare-financiara.html">Administrare financiara</a></li>
+            <li><a href="incasare-cote.html">Incasare cote</a></li>
+            <li><a href="verificari-contabile.html">Verificari contabile</a></li>
+            <li><a href="administrare-tehnica.html">Administrare tehnica</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Zone</h5>
+          <ul>
+            <li><a href="sector-1.html">Sector 1</a></li>
+            <li><a href="sector-2.html">Sector 2</a></li>
+            <li><a href="sector-3.html">Sector 3</a></li>
+            <li><a href="sector-4.html">Sector 4</a></li>
+            <li><a href="sector-5.html">Sector 5</a></li>
+            <li><a href="sector-6.html">Sector 6</a></li>
+            <li><a href="voluntari.html">Voluntari</a></li>
+            <li><a href="popesti-leordeni.html">Popesti-Leordeni</a></li>
+            <li><a href="ploiesti.html">Ploiesti</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Informatii</h5>
+          <ul>
+            <li><a href="legislatie.html">Legislatie</a></li>
+            <li><a href="sesizari.html">Sesizari</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="termeni.html">Termeni si conditii</a></li>
+            <li><a href="confidentialitate.html">Confidentialitate</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti si Ilfov</span>
+        <div class="footer-legal">
+          <a href="termeni.html">Termeni si conditii</a>
+          <a href="confidentialitate.html">Confidentialitate</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cenzorat Asociatii de Proprietari – MP Group Bucuresti</title>
+  <meta name="description" content="Servicii de cenzorat pentru asociatii de proprietari din Bucuresti si Ilfov. Experti contabili autorizati CECCAR. Verificare lunara liste, registre, fonduri. MP Group." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc2222; --red-dark: #a81c1c; --red-light: #fdeaea;
+      --black: #111111; --gray-dark: #333333; --gray-mid: #555555;
+      --gray-light: #888888; --gray-border: #e0e0e0; --gray-bg: #f7f7f7;
+      --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
+    .topbar-contact a:hover { text-decoration: underline; }
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 70px; gap: 32px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 240px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; transition: background 0.2s !important; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+    .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero-desc { font-size: 15px; color: #888; max-width: 620px; line-height: 1.7; }
+    .page-body { max-width: 1600px; margin: 0 auto; padding: 60px; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; }
+    .content-section { margin-bottom: 40px; }
+    .content-section:last-child { margin-bottom: 0; }
+    .section-title-red { font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 20px; }
+    .content-block p { font-size: 14px; color: var(--gray-mid); line-height: 1.75; margin-bottom: 10px; }
+    .content-block p:last-child { margin-bottom: 0; }
+    .content-block p strong { color: var(--black); font-weight: 600; }
+    .atributii-list { list-style: none; margin-top: 8px; }
+    .atributii-list li { padding: 10px 0; border-bottom: 1px solid var(--gray-border); font-size: 14px; color: var(--gray-mid); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+    .atributii-list li:last-child { border-bottom: none; }
+    .atributii-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+    .testimonial-card { background: var(--gray-bg); border-left: 3px solid var(--red); padding: 20px 24px; border-radius: 0 4px 4px 0; margin-top: 8px; }
+    .testimonial-card p { font-size: 14px; color: var(--gray-dark); line-height: 1.7; font-style: italic; }
+    .sidebar { position: sticky; top: 90px; }
+    .sidebar-box { background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 4px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-box-title { font-size: 12px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links li:last-child { border-bottom: none; }
+    .sidebar-links a { display: block; padding: 10px 0; font-size: 13px; color: var(--gray-dark); transition: color 0.2s; }
+    .sidebar-links a:hover, .sidebar-links a.active { color: var(--red); font-weight: 600; }
+    .sidebar-contact { background: var(--black); border-radius: 4px; padding: 24px; text-align: center; }
+    .sidebar-contact p { font-size: 13px; color: #888; margin-bottom: 16px; line-height: 1.6; }
+    .sidebar-contact a.btn { display: block; background: var(--red); color: var(--white); font-size: 13px; font-weight: 600; padding: 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; transition: background 0.2s; margin-bottom: 10px; }
+    .sidebar-contact a.btn:hover { background: var(--red-dark); }
+    .sidebar-contact a.tel { font-size: 15px; font-weight: 600; color: var(--white); display: block; margin-top: 4px; }
+    footer { background: #111; padding: 0; margin-top: 80px; }
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .page-body { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
+      .sidebar { position: static; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">021 332 0392</a>
+        <a href="tel:+40744652156">0744 652 156</a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#" class="active">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+            <a href="cenzorat.html" class="active">Cenzorat asociatii proprietari</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+        <li><a href="sesizari.html">Sesizari</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40744652156">0744 652 156</a></div>
+        <a href="index.html#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#servicii">Servicii</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Cenzorat asociatii proprietari</span>
+      </div>
+      <h1>Cenzorat asociatii de <em>proprietari</em></h1>
+      <p class="page-hero-desc">Servicii lunare de cenzorat extern pentru asociatii de proprietari din Bucuresti si Ilfov. Experti contabili autorizati CECCAR, cu experienta specifica in documentatia asociatiilor de proprietari.</p>
+    </div>
+  </div>
+  <div class="page-body">
+    <main>
+      <div class="content-section">
+        <div class="section-title-red">Ce este cenzorul asociatiei de proprietari</div>
+        <div class="content-block">
+          <p>Conform Legii 196/2018, fiecare asociatie de proprietari are <strong>obligatia legala</strong> de a desemna un cenzor sau o comisie de cenzori. Rolul acestuia este sa verifice independent gestiunea financiar-contabila a administratorului si sa raporteze asociatiei orice neregula constatata.</p>
+          <p>In situatia in care niciun proprietar din asociatie nu doreste sa preia aceasta functie, adunarea generala poate mandata comitetul executiv sa angajeze un <strong>cenzor extern</strong> — persoana fizica cu studii superioare in domeniul economic sau expert contabil autorizat.</p>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-title-red">Ce verifica cenzorul lunar</div>
+        <ul class="atributii-list">
+          <li><span class="atributii-dot"></span><span>Fisele pe apartament intocmite de administrator sau contabil, in format fizic sau electronic, inclusiv corectitudinea preluarii restantelor in lista de intretinere curenta</span></li>
+          <li><span class="atributii-dot"></span><span>Listele de intretinere si bazele de calcul detaliate pentru fiecare cheltuiala, verificand concordanta cu legislatia si cu hotararile adoptate de asociatie</span></li>
+          <li><span class="atributii-dot"></span><span>Registrul de mijloace banesti aflate in contul bancii, cu toate operatiunile lunare conform extraselor de cont</span></li>
+          <li><span class="atributii-dot"></span><span>Cererile proprietarilor privind numarul de persoane care au locuit in asociatie in luna respectiva</span></li>
+          <li><span class="atributii-dot"></span><span>Situatia soldurilor elementelor de Activ si Pasiv intocmita lunar de administrator si certificata de cenzor</span></li>
+          <li><span class="atributii-dot"></span><span>Documentele justificative: dispozitii de plata-incasare, contracte de prestari servicii, devize de lucrari, procese verbale de receptie</span></li>
+          <li><span class="atributii-dot"></span><span>Modul de constituire, incasare si utilizare a fondurilor asociatiei (fond de rulment, fond de reparatii, alte fonduri)</span></li>
+          <li><span class="atributii-dot"></span><span>Penalitatile aplicate in lista de plata si corectitudinea calculului acestora</span></li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-title-red">Atributiile cenzorului conform Legii 196/2018</div>
+        <ul class="atributii-list">
+          <li><span class="atributii-dot"></span><span>Urmareste aplicarea prevederilor legale de catre organele de conducere ale asociatiei</span></li>
+          <li><span class="atributii-dot"></span><span>Verifica lunar executia bugetului de venituri si cheltuieli conform documentelor si registrelor</span></li>
+          <li><span class="atributii-dot"></span><span>Intocmeste si prezinta adunarii generale rapoarte periodice asupra activitatii si gestiunii asociatiei, cu masurile propuse</span></li>
+          <li><span class="atributii-dot"></span><span>Efectueaza inspectii neasteptate alaturi de doi membri ai comitetului executiv pentru verificarea activitatii contabile si a casieriei</span></li>
+          <li><span class="atributii-dot"></span><span>Asigura legalitatea in cadrul adunarilor generale si ale comitetului executiv prin participarea la sedinte</span></li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-title-red">De ce sa apelati la un cenzor extern MP Group</div>
+        <div class="content-block">
+          <p>Echipa noastra include experti contabili autorizati CECCAR, cu experienta dovedita in documentatia specifica asociatiilor de proprietari. Oferim servicii de cenzorat extern separat de serviciile de contabilitate si administrare, astfel incat verificarea sa fie cu adevarat <strong>independenta</strong>.</p>
+          <p>Pretul serviciului de cenzorat se stabileste in functie de numarul de apartamente si de modul in care sunt realizate evidentele contabile ale asociatiei. Contactati-ne pentru o oferta personalizata.</p>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-title-red">Vocea clientului</div>
+        <div class="testimonial-card">
+          <p>Sunt cenzor la blocul in care locuiesc de aproape 10 ani. Aveam frecvent neintelegeri legate de repartizarea cheltuielilor. De cand MP Group administreaza blocul, totul este atat de clar si verificabil online incat practic avem 300 de cenzori. Felicitari!</p>
+        </div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Toate serviciile</div>
+        <ul class="sidebar-links">
+          <li><a href="administrare-financiara.html">Administrare financiara</a></li>
+          <li><a href="incasare-cote.html">Incasare cote intretinere</a></li>
+          <li><a href="verificari-contabile.html">Verificari financiar-contabile</a></li>
+          <li><a href="administrare-tehnica.html">Administrare tehnica</a></li>
+          <li><a href="cenzorat.html" class="active">Cenzorat asociatii</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Zone</div>
+        <ul class="sidebar-links">
+          <li><a href="sector-1.html">Sector 1</a></li>
+          <li><a href="sector-2.html">Sector 2</a></li>
+          <li><a href="sector-3.html">Sector 3</a></li>
+          <li><a href="sector-4.html">Sector 4</a></li>
+          <li><a href="sector-5.html">Sector 5</a></li>
+          <li><a href="sector-6.html">Sector 6</a></li>
+          <li><a href="voluntari.html">Voluntari</a></li>
+          <li><a href="popesti-leordeni.html">Popesti-Leordeni</a></li>
+          <li><a href="ploiesti.html">Ploiesti</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-contact">
+        <p>Solicita o oferta pentru serviciul de cenzorat.</p>
+        <a href="index.html#formular" class="btn">Solicita oferta</a>
+        <a href="tel:+40744652156" class="tel">0744 652 156</a>
+      </div>
+    </aside>
+  </div>
+  <footer style="background:#111;padding:0;margin-top:0;">
+    <div style="max-width:1600px;margin:0 auto;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px;color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri si imobile Bucuresti</span>
+      <div style="display:flex;gap:20px;">
+        <a href="termeni.html" style="font-size:11px;color:#333;text-decoration:none;">Termeni si conditii</a>
+        <a href="confidentialitate.html" style="font-size:11px;color:#333;text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px;color:#333;text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </footer>
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</body>
+</html>

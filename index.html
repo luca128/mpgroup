@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP Group – Administrare blocuri si imobile Bucuresti</title>
+  <meta name="description" content="Servicii de administrare blocuri si imobile in Bucuresti si Ilfov. Administrator bloc atestat, contabilitate asociatii de proprietari, interventii tehnice, acces online. Activi din 1992." />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #cc2222;
+      --red-dark: #a81c1c;
+      --red-light: #fdeaea;
+      --black: #111111;
+      --gray-dark: #333333;
+      --gray-mid: #555555;
+      --gray-light: #888888;
+      --gray-border: #e0e0e0;
+      --gray-bg: #f7f7f7;
+      --white: #ffffff;
+      --font-body: 'Nunito', sans-serif;
+      --font-display: 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ===== TOP BAR ===== */
+    .topbar {
+      background: var(--red);
+      padding: 8px 0;
+    }
+    .topbar-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+    }
+    .topbar-contact {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-contact a {
+      font-size: 12px;
+      color: #fff;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .topbar-contact a:hover { text-decoration: underline; }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 2.5px solid var(--red);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      height: 70px;
+      gap: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links .has-dropdown { position: relative; }
+    .nav-links .has-dropdown:hover .dropdown { display: block; }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-top: 2px solid var(--red);
+      min-width: 220px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      z-index: 200;
+    }
+    .dropdown a {
+      display: block;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      border-bottom: 1px solid var(--gray-border);
+      transition: background 0.15s;
+    }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .nav-phone a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.04em !important;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: url('hero-bg.jpg') center center / cover no-repeat;
+      padding: 120px 60px 100px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(5, 5, 5, 0.78) 0%,
+        rgba(15, 15, 15, 0.60) 50%,
+        rgba(5, 5, 5, 0.40) 100%
+      );
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 18px;
+    }
+    .hero-accent {
+      width: 40px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #ff6666;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--red-dark); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 24px;
+      border-radius: 3px;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--white); color: var(--white); }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 400;
+      backdrop-filter: blur(4px);
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.97);
+      border: none;
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .hero-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .hero-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .hero-feat:last-child { margin-bottom: 0; }
+    .hero-feat-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--red-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-feat-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero-feat-body strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 2px;
+    }
+    .hero-feat-body span {
+      font-size: 12px;
+      color: var(--gray-light);
+      line-height: 1.5;
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      background: var(--black);
+      padding: 32px 60px;
+    }
+    .stats-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 8px 20px;
+      border-right: 1px solid #2a2a2a;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-num span { color: var(--red); }
+    .stat-label {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== SECTION SHARED ===== */
+    .section {
+      padding: 72px 60px;
+    }
+    .section-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title em { font-style: italic; color: var(--red); }
+    .section-desc {
+      font-size: 15px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    /* ===== SERVICII ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      padding: 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--red);
+      box-shadow: 0 2px 12px rgba(204,34,34,0.08);
+    }
+    .service-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--red);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .service-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+    .service-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .service-link:hover { text-decoration: underline; }
+
+    /* ===== ZONE ===== */
+    .zone-section { background: var(--gray-bg); }
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .zone-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+    .zone-card:hover { border-color: var(--red); }
+    .zone-card:hover .zone-arrow { color: var(--red); }
+    .zone-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+    .zone-sub {
+      font-size: 12px;
+      color: var(--gray-light);
+    }
+    .zone-arrow {
+      font-size: 18px;
+      color: var(--gray-border);
+      transition: color 0.2s;
+    }
+
+    /* ===== CONTRACT ===== */
+    .contract-section {
+      background: var(--white);
+    }
+    .contract-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contract-text h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .contract-text p {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .contract-text p:last-child { margin-bottom: 0; }
+    .insurance-box {
+      background: var(--red-light);
+      border-left: 3px solid var(--red);
+      padding: 18px 20px;
+      border-radius: 0 4px 4px 0;
+      margin-top: 24px;
+    }
+    .insurance-box p {
+      font-size: 13px;
+      color: var(--gray-dark);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .insurance-box strong { color: var(--red); }
+    .plati-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .plati-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .plati-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.5;
+    }
+    .plati-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ===== LEGISLATIE ===== */
+    .lege-section { background: var(--black); }
+    .lege-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .lege-badge {
+      display: inline-block;
+      font-size: 64px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .lege-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .lege-desc {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .lege-desc:last-child { margin-bottom: 0; }
+    .lege-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lege-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.55;
+    }
+    .lege-check {
+      width: 16px;
+      height: 16px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .lege-check::after {
+      content: '';
+      width: 6px;
+      height: 4px;
+      border-left: 1.5px solid #fff;
+      border-bottom: 1.5px solid #fff;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block;
+    }
+
+    /* ===== DE CE NOI ===== */
+    .why-section { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .why-item {
+      padding: 28px 24px;
+      border-right: 1px solid var(--gray-border);
+    }
+    .why-item:last-child { border-right: none; }
+    .why-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--red-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .why-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .why-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--red);
+      margin-bottom: 14px;
+    }
+    .why-desc {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+    }
+    .why-desc p { margin: 0; }
+
+    /* ===== FORMULAR ===== */
+    .form-section { background: var(--gray-bg); }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 60px;
+      align-items: start;
+    }
+    .form-intro h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+    .form-intro p {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray-dark);
+    }
+    .contact-row svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .contact-row a { color: var(--black); font-weight: 500; }
+    .contact-row a:hover { color: var(--red); }
+    .form-box {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      padding: 28px;
+    }
+    .form-box h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .form-row {
+      margin-bottom: 14px;
+    }
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      border-color: var(--red);
+    }
+    .form-row textarea { resize: vertical; min-height: 80px; }
+    .form-submit {
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--red-dark); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      padding: 48px 60px 28px;
+    }
+    .footer-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #222;
+    }
+    .footer-brand .logo img {
+      height: 52px;
+      margin-bottom: 12px;
+      filter: brightness(0) invert(1);
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.65;
+      max-width: 260px;
+    }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: #666;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: #444;
+    }
+    .footer-wa {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #888;
+      transition: color 0.2s;
+    }
+    .footer-wa:hover { color: #25D366; }
+    .footer-wa svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .hero h1 { font-size: 34px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .zone-grid { grid-template-columns: 1fr 1fr; }
+      .contract-grid { grid-template-columns: 1fr; gap: 36px; }
+      .lege-inner { grid-template-columns: 1fr; padding: 48px 24px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-item { border-right: none; border-bottom: 1px solid var(--gray-border); }
+      .why-item:last-child { border-bottom: none; }
+      .form-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+    }
+    @media (max-width: 560px) {
+      .zone-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .hero { padding: 60px 20px 52px; }
+      .section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          021 332 0392
+        </a>
+        <a href="tel:+40744652156">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          0744 652 156
+        </a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+            <a href="cenzorat.html">Cenzorat asociatii</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+        <li><a href="sesizari.html">Sesizari</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone">
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+        <a href="#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner" style="grid-template-columns: 1fr; max-width: 900px;">
+        <p class="hero-eyebrow">Administrare blocuri &mdash; Bucuresti</p>
+        <div class="hero-accent"></div>
+        <h1>Blocul tau, gestionat de oameni <em>cu experienta.</em></h1>
+        <p class="hero-desc">
+          Din 1992, MP Group asigura administrarea financiara, fiscala si tehnica a asociatiilor de proprietari din Bucuresti si Ilfov. Fiecare bloc are nevoie de ordine clara in acte, plati la timp si cineva care raspunde cand apare o problema.
+        </p>
+        <div class="hero-actions">
+          <a href="#formular" class="btn-primary">Solicita oferta gratuita</a>
+          <a href="#servicii" class="btn-secondary">Cum lucram</a>
+        </div>
+        <div class="hero-tags">
+          <span class="tag">Administrator atestat</span>
+          <span class="tag">Legea 196/2018</span>
+          <span class="tag">Acces online proprietari</span>
+          <span class="tag">Plati online si la automate</span>
+          <span class="tag">Bucuresti + Ilfov</span>
+        </div>
+    </div>
+  </section>
+
+  <!-- DE CE NOI -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-title">De ce noi?</div>
+          <div class="why-desc" style="margin-top:8px;">
+            <p style="margin-bottom:12px;">De ce ar trebui sa ne alegeti pentru administrare blocuri?</p>
+            <p style="margin-bottom:12px;">Pentru noi este important confortul dumneavoastra.</p>
+            <p style="margin-bottom:12px;">Va punem la dispozitie pachete complete de servicii de administrare blocuri la preturi avantajoase.</p>
+            <p>Datorita experientei noastre in domeniu, suntem in masura sa identificam cerintele pe care le aveti si sa va orientam, astfel incat sa puteti alege eficient serviciile potrivite. Fondurile asociatiei nu sunt niciodata cheltuite fara rost.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-title">Transparenta</div>
+          <div class="why-desc" style="margin-top:8px;">
+            <p style="margin-bottom:12px;">Pe langa tarife pe care vi le puteti permite, va oferim posibilitatea de a urmari repartizarea tuturor cheltuielilor implicate.</p>
+            <p style="margin-bottom:12px;">Proprietarii din imobilele aflate sub contract cu societatea noastra beneficiaza de acces online, gratuit si permanent, sau pot primi lunar o informare scrisa cu toate costurile cuprinse in lista de intretinere.</p>
+            <p>Linii telefonice cu apel normal sunt disponibile pentru contact direct in permanenta.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-title">Eficienta</div>
+          <div class="why-desc" style="margin-top:8px;">
+            <p style="margin-bottom:12px;">O intreaga echipa de profesionisti se ocupa de administrarea blocului dumneavoastra: administrator cu atestat, experti contabili specializati, personal in domeniul tehnic, astfel incat sa aveti certitudinea ca ati ales cea mai potrivita solutie de administrare blocuri.</p>
+            <p>In functie de serviciile contractate, realizam verificari tehnice periodice ale partilor comune ale imobilului, astfel incat cheltuielile cu lucrarile de reparatii sa fie reduse la minimum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num" data-target="30" data-suffix="+">0</div>
+        <div class="stat-label">Ani de activitate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="6" data-suffix="">0</div>
+        <div class="stat-label">Sectoare Bucuresti</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="50" data-suffix="k€">0</div>
+        <div class="stat-label">Asigurare profesionala</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="24" data-suffix="/7">0</div>
+        <div class="stat-label">Acces online proprietari</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICII -->
+  <section class="section" id="servicii">
+    <div class="section-inner">
+      <p class="section-eyebrow">Ce oferim</p>
+      <h2 class="section-title">Gama completa de servicii pentru <em>asociatia ta</em></h2>
+      <p class="section-desc">
+        Avand in vedere experienta acumulata din 1992 in managementul administrativ atat in tara cat si in strainatate, cunoasterea aprofundata a problemelor cu care se confrunta asociatiile de proprietari si activitatea noastra bazata pe transparenta, profesionalism si responsabilitate, consideram ca avem argumente solide pentru a va prezenta urmatoarele servicii disponibile pentru asociatia si proprietarii din imobilul dumneavoastra.
+      </p>
+      <div class="services-grid" style="grid-template-columns: repeat(5,1fr);">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-name">Administrare financiara</div>
+          <div class="service-desc">Evidenta contabila completa, intocmire liste de intretinere lunare, registre obligatorii si plata furnizorilor in termen.</div>
+          <a href="administrare-financiara.html" class="service-link">Detalii &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-name">Incasare cote intretinere</div>
+          <div class="service-desc">Colectarea contributiilor lunare prin numerar, card, transfer bancar, online, aplicatii mobilpay si retea paypoint.</div>
+          <a href="incasare-cote.html" class="service-link">Detalii &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-name">Verificari financiar-contabile</div>
+          <div class="service-desc">Controale si audituri ale evidentelor contabile ale asociatiei, efectuate de experti autorizati, exclusiv la cererea asociatiei.</div>
+          <a href="verificari-contabile.html" class="service-link">Detalii &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-name">Administrare tehnica</div>
+          <div class="service-desc">Monitorizare periodica parti comune, dispecerat urgenta non-stop, supervizare lucrari reparatii si verificare facturare furnizori.</div>
+          <a href="administrare-tehnica.html" class="service-link">Detalii &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-name">Cenzorat asociatii proprietari</div>
+          <div class="service-desc">Verificare lunara independenta a gestiunii financiar-contabile a asociatiei. Experti contabili autorizati CECCAR, conform Legii 196/2018.</div>
+          <a href="cenzorat.html" class="service-link">Detalii &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE -->
+  <section class="section zone-section" id="zone">
+    <div class="section-inner">
+      <p class="section-eyebrow">Aria de acoperire</p>
+      <h2 class="section-title">Administrare blocuri in <em>toata Bucurestiul</em></h2>
+      <p class="section-desc">
+        Acoperim toate sectoarele din Bucuresti si zonele limitrofe din Ilfov: Voluntari si Popesti-Leordeni. Oferim de asemenea servicii financiar-contabile si in alte orase din tara.
+      </p>
+      <div class="zone-grid">
+        <a href="sector-1.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 1</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="sector-2.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 2</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="sector-3.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 3</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="sector-4.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 4</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="sector-5.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 5</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="sector-6.html" class="zone-card">
+          <div>
+            <div class="zone-name">Sector 6</div>
+            <div class="zone-sub">Administrare blocuri</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="voluntari.html" class="zone-card">
+          <div>
+            <div class="zone-name">Voluntari</div>
+            <div class="zone-sub">Ilfov</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+        <a href="popesti-leordeni.html" class="zone-card">
+          <div>
+            <div class="zone-name">Popesti-Leordeni</div>
+            <div class="zone-sub">Ilfov</div>
+          </div>
+          <div class="zone-arrow">&rarr;</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRACT -->
+  <section class="section contract-section" id="contract">
+    <div class="section-inner">
+      <p class="section-eyebrow">Contract si garantii</p>
+      <h2 class="section-title">Ce include un contract <em>cu MP Group</em></h2>
+      <div class="contract-grid">
+        <div class="contract-text">
+          <h3>Administrare serioasa, documentata</h3>
+          <p>
+            Contractul de administrare poate fi incheiat pe durata determinata cu posibilitate de prelungire sau pe durata nedeterminata cu posibilitate de reziliere. Termenii sunt stabiliti impreuna cu comitetul executiv al asociatiei.
+          </p>
+          <p>
+            Furnizarea serviciilor se face in baza hotararii adunarii generale a asociatiei de proprietari, iar toate cheltuielile sunt verificabile de catre proprietari prin platforma online pusa la dispozitie gratuit.
+          </p>
+          <div class="insurance-box">
+            <p>
+              Conform obligatiilor din <strong>Legea 196/2018</strong>, MP Group pune la dispozitia fiecarei asociatii cu care incheie contract o <strong>polita de asigurare de raspundere profesionala in valoare de 50.000 Euro</strong>, valabila pe toata durata colaborarii.
+            </p>
+          </div>
+        </div>
+        <div>
+          <p class="plati-title">Metode de plata a intretinerii</p>
+          <ul class="plati-list">
+            <li><span class="plati-dot"></span><span>Numerar sau card POS la casieria blocului (1&ndash;2 sedinte lunare)</span></li>
+            <li><span class="plati-dot"></span><span>Transfer bancar direct in contul asociatiei &mdash; disponibil non-stop</span></li>
+            <li><span class="plati-dot"></span><span>Plata online cu cardul pe platforma blocexpert.ro &mdash; non-stop</span></li>
+            <li><span class="plati-dot"></span><span>Aplicatii mobile de plata electronica</span></li>
+            <li><span class="plati-dot"></span><span>Automate SELFPAY in MegaImage, Profi, Cora, Carrefour si altele</span></li>
+            <li><span class="plati-dot"></span><span>Retea PayPoint la comerciantii inregistrati</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGISLATIE -->
+  <section class="section lege-section">
+    <div class="lege-inner">
+      <div>
+        <div class="lege-badge">196</div>
+        <h2 class="lege-title">Legea 196/2018 &mdash; aplicata fara intarziere</h2>
+        <p class="lege-desc">
+          Din 28 septembrie 2018, activitatea asociatiilor de proprietari este reglementata de Legea 196/2018. MP Group aplica orice modificare legislativa imediat, astfel incat asociatiile din administrarea noastra nu au probleme fiscale sau juridice.
+        </p>
+        <p class="lege-desc">
+          Activam in domeniu din 1992. In toti acesti ani am respectat fiecare cadru legal: Legea 114 din 1996, Legea 230 din 2007 si HG 1588 din 2007, iar din 2018 Legea 196. Stim exact ce inseamna continuitate si conformitate.
+        </p>
+      </div>
+      <div>
+        <ul class="lege-list">
+          <li><span class="lege-check"></span><span>Administrator cu certificat de calificare si atestat emis de autoritatea locala competenta</span></li>
+          <li><span class="lege-check"></span><span>Experti contabili autorizati specializati in asociatii de proprietari</span></li>
+          <li><span class="lege-check"></span><span>Economisti si juristi cu experienta in problematica asociatiilor</span></li>
+          <li><span class="lege-check"></span><span>Personal tehnic autorizat pentru interventii si verificari periodice</span></li>
+          <li><span class="lege-check"></span><span>Polita de asigurare de raspundere profesionala 50.000 Euro</span></li>
+          <li><span class="lege-check"></span><span>Actualizare imediata la orice modificare a cadrului legal</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROMOTII -->
+  <section class="section" style="background: var(--red); padding: 40px 60px;">
+    <div class="section-inner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; max-width:1600px;">
+      <div>
+        <p style="font-size:11px; font-weight:600; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">Promotie activa</p>
+        <p style="font-family: var(--font-display); font-size:22px; font-weight:700; color:#fff; margin:0;">Avem promotii si reduceri active. Contactati-ne acum!</p>
+      </div>
+      <a href="#formular" class="btn-primary" style="background:#fff; color:var(--red); white-space:nowrap;">Solicita oferta</a>
+    </div>
+  </section>
+
+  <!-- FORMULAR -->
+  <section class="section form-section" id="formular">
+    <div class="section-inner">
+      <div class="form-grid">
+        <div class="form-intro">
+          <p class="section-eyebrow">Contact</p>
+          <h3>Solicitati o oferta pentru blocul dvs.</h3>
+          <p>
+            Trimiteti-ne datele imobilului si situatia curenta a asociatiei. Numarul de apartamente, eventuale probleme de administrare, restante sau motive pentru care cautati un administrator nou. Raspundem in cel mult 24 de ore lucratoare.
+          </p>
+          <div class="contact-info">
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+              <a href="tel:+40744652156">0744 652 156</a>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:contact@mpgroup.ro">contact@mpgroup.ro</a>
+            </div>
+          </div>
+        </div>
+        <div class="form-box">
+          <h4>Cerere de oferta</h4>
+          <form action="#" method="POST">
+            <div class="form-row">
+              <label for="nume">Nume si prenume *</label>
+              <input type="text" id="nume" name="nume" required placeholder="ex. Ion Popescu" />
+            </div>
+            <div class="form-row">
+              <label for="tel">Telefon *</label>
+              <input type="tel" id="tel" name="tel" required placeholder="07xx xxx xxx" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="adresa@email.ro" />
+            </div>
+            <div class="form-row">
+              <label for="adresa">Adresa imobil *</label>
+              <input type="text" id="adresa" name="adresa" required placeholder="Strada, nr., sector" />
+            </div>
+            <div class="form-row">
+              <label for="apartamente">Numar apartamente *</label>
+              <input type="number" id="apartamente" name="apartamente" required placeholder="ex. 48" />
+            </div>
+            <div class="form-row">
+              <label for="mesaj">Mesaj</label>
+              <textarea id="mesaj" name="mesaj" placeholder="Descrieti pe scurt situatia actuala a asociatiei..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Trimite cererea</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111; padding:0; margin-top:0;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid #1e1e1e; max-width:1600px; margin:0 auto;">
+      <!-- STANGA -->
+      <div style="padding:52px 60px; border-right:1px solid #1e1e1e;">
+        <a href="index.html" style="display:inline-block; margin-bottom:14px; text-decoration:none;">
+          <span style="font-family:var(--font-body); font-size:28px; font-weight:700; color:#fff; letter-spacing:-0.3px;">MP<span style="color:var(--red);">Group</span></span>
+        </a>
+        <p style="font-size:14px; color:#555; line-height:1.7; max-width:340px; margin-bottom:24px;">Administrare profesionala a blocurilor si imobilelor din Bucuresti si Ilfov. Activi din 1992.</p>
+        <div style="display:flex; flex-direction:column; gap:5px; margin-bottom:28px;">
+          <span style="font-size:13px; color:#888;">Telefon fix: <strong style="color:#fff; font-weight:600;">021 332 0392</strong></span>
+          <span style="font-size:13px; color:#888;">Mobil / WhatsApp: <strong style="color:#fff; font-weight:600;">0744 652 156</strong></span>
+        </div>
+        <a href="index.html#formular" style="display:inline-block; background:var(--red); color:#fff; font-size:13px; font-weight:600; padding:11px 24px; border-radius:3px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; margin-bottom:28px;">Solicita oferta gratuita</a>
+        <div style="display:flex; gap:10px;">
+          <a href="https://www.facebook.com/mpgroup.ro/" target="_blank" rel="noopener" aria-label="Facebook MP Group" style="width:36px; height:36px; background:#1877F2; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp MP Group" style="width:36px; height:36px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- DREAPTA - 3 coloane link-uri -->
+      <div style="padding:52px 60px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px;">
+        <div>
+          <div style="font-size:10px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #1e1e1e;">Servicii</div>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:9px;"><a href="administrare-financiara.html" style="font-size:13px; color:#555; text-decoration:none;">Administrare financiara</a></li>
+            <li style="margin-bottom:9px;"><a href="incasare-cote.html" style="font-size:13px; color:#555; text-decoration:none;">Incasare cote</a></li>
+            <li style="margin-bottom:9px;"><a href="verificari-contabile.html" style="font-size:13px; color:#555; text-decoration:none;">Verificari contabile</a></li>
+            <li><a href="administrare-tehnica.html" style="font-size:13px; color:#555; text-decoration:none;">Administrare tehnica</a></li>
+            <li style="margin-top:9px;"><a href="cenzorat.html" style="font-size:13px; color:#555; text-decoration:none;">Cenzorat asociatii</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:10px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #1e1e1e;">Zone</div>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:9px;"><a href="sector-1.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 1</a></li>
+            <li style="margin-bottom:9px;"><a href="sector-2.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 2</a></li>
+            <li style="margin-bottom:9px;"><a href="sector-3.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 3</a></li>
+            <li style="margin-bottom:9px;"><a href="sector-4.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 4</a></li>
+            <li style="margin-bottom:9px;"><a href="sector-5.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 5</a></li>
+            <li style="margin-bottom:9px;"><a href="sector-6.html" style="font-size:13px; color:#555; text-decoration:none;">Sector 6</a></li>
+            <li style="margin-bottom:9px;"><a href="voluntari.html" style="font-size:13px; color:#555; text-decoration:none;">Voluntari</a></li>
+            <li style="margin-bottom:9px;"><a href="popesti-leordeni.html" style="font-size:13px; color:#555; text-decoration:none;">Popesti-Leordeni</a></li>
+            <li><a href="ploiesti.html" style="font-size:13px; color:#555; text-decoration:none;">Ploiesti</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:10px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #1e1e1e;">Informatii</div>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:9px;"><a href="legislatie.html" style="font-size:13px; color:#555; text-decoration:none;">Legislatie</a></li>
+            <li style="margin-bottom:9px;"><a href="sesizari.html" style="font-size:13px; color:#555; text-decoration:none;">Sesizari</a></li>
+            <li style="margin-bottom:9px;"><a href="contact.html" style="font-size:13px; color:#555; text-decoration:none;">Contact</a></li>
+            <li style="margin-bottom:9px;"><a href="https://www.blocexpert.ro/app/files/index.php" target="_blank" rel="noopener" style="font-size:13px; color:#555; text-decoration:none;">Acces online clienti</a></li>
+            <li style="margin-bottom:9px;"><a href="termeni.html" style="font-size:13px; color:#555; text-decoration:none;">Termeni si conditii</a></li>
+            <li style="margin-bottom:9px;"><a href="confidentialitate.html" style="font-size:13px; color:#555; text-decoration:none;">Confidentialitate</a></li>
+            <li><a href="cookies.html" style="font-size:13px; color:#555; text-decoration:none;">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- BAR JOS -->
+    <div style="max-width:1600px; margin:0 auto; padding:18px 60px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px; color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri si imobile Bucuresti</span>
+      <div style="display:flex; gap:20px;">
+        <a href="termeni.html" style="font-size:11px; color:#333; text-decoration:none;">Termeni si conditii</a>
+        <a href="confidentialitate.html" style="font-size:11px; color:#333; text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px; color:#333; text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="Contactati-ne pe WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.25)'">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const statsBar = document.querySelector('.stats-bar');
+    let animated = false;
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.target);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const update = () => {
+          current += step;
+          if (current < target) {
+            counter.textContent = Math.floor(current) + suffix;
+            requestAnimationFrame(update);
+          } else {
+            counter.innerHTML = target + '<span style="color:var(--red)">' + suffix + '</span>';
+          }
+        };
+        update();
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !animated) {
+        animated = true;
+        animateCounters();
+      }
+    }, { threshold: 0.3 });
+
+    observer.observe(statsBar);
+  </script>
+</body>
+</html>

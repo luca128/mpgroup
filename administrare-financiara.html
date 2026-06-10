@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrare Blocuri Financiara – MP Group Bucuresti</title>
+  <meta name="description" content="Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti si Ilfov. Evidente contabile, liste intretinere, incasari, plati furnizori. MP Group." />
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #cc2222;
+      --red-dark: #a81c1c;
+      --red-light: #fdeaea;
+      --black: #111111;
+      --gray-dark: #333333;
+      --gray-mid: #555555;
+      --gray-light: #888888;
+      --gray-border: #e0e0e0;
+      --gray-bg: #f7f7f7;
+      --white: #ffffff;
+      --font-body: 'Nunito', sans-serif;
+      --font-display: 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== TOP BAR ===== */
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); letter-spacing: 0.02em; }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+    .topbar-contact a:hover { text-decoration: underline; }
+
+    /* ===== NAVBAR ===== */
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 70px; gap: 32px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 220px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); transition: background 0.15s; }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; transition: background 0.2s !important; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: var(--black);
+      padding: 52px 60px;
+      border-bottom: 3px solid var(--red);
+    }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span { font-size: 12px; color: #444; }
+    .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero-desc { font-size: 15px; color: #888; max-width: 600px; line-height: 1.7; }
+
+    /* ===== LAYOUT ===== */
+    .page-body { max-width: 1600px; margin: 0 auto; padding: 60px; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; }
+
+    /* ===== CONTINUT PRINCIPAL ===== */
+    .content-section { margin-bottom: 48px; }
+    .content-section:last-child { margin-bottom: 0; }
+    .section-title-red {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--red);
+      margin-bottom: 20px;
+    }
+    .content-block { margin-bottom: 24px; }
+    .content-block:last-child { margin-bottom: 0; }
+    .content-block p { font-size: 14px; color: var(--gray-mid); line-height: 1.75; margin-bottom: 10px; }
+    .content-block p:last-child { margin-bottom: 0; }
+    .content-block p strong { color: var(--black); font-weight: 600; }
+
+    /* ===== TESTIMONIALE ===== */
+    .testimoniale { margin-top: 48px; }
+    .testimoniale-title { font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 24px; }
+    .testimonial-card { background: var(--gray-bg); border-left: 3px solid var(--red); padding: 20px 24px; border-radius: 0 4px 4px 0; margin-bottom: 16px; }
+    .testimonial-card p { font-size: 14px; color: var(--gray-dark); line-height: 1.7; font-style: italic; }
+
+    /* ===== NOTA FINALA ===== */
+    .nota-finala { background: var(--red-light); border: 1px solid #f5c6c6; border-radius: 4px; padding: 20px 24px; margin-top: 32px; }
+    .nota-finala p { font-size: 13px; color: var(--gray-dark); line-height: 1.65; }
+    .nota-finala strong { color: var(--red); }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar { position: sticky; top: 90px; }
+    .sidebar-box { background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 4px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-box-title { font-size: 12px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links li:last-child { border-bottom: none; }
+    .sidebar-links a { display: block; padding: 10px 0; font-size: 13px; color: var(--gray-dark); transition: color 0.2s; }
+    .sidebar-links a:hover { color: var(--red); }
+    .sidebar-links a.active { color: var(--red); font-weight: 600; }
+    .sidebar-contact { background: var(--black); border-radius: 4px; padding: 24px; text-align: center; }
+    .sidebar-contact p { font-size: 13px; color: #888; margin-bottom: 16px; line-height: 1.6; }
+    .sidebar-contact a.btn { display: block; background: var(--red); color: var(--white); font-size: 13px; font-weight: 600; padding: 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; transition: background 0.2s; margin-bottom: 10px; }
+    .sidebar-contact a.btn:hover { background: var(--red-dark); }
+    .sidebar-contact a.tel { font-size: 16px; font-weight: 600; color: var(--white); display: block; margin-top: 4px; }
+    .sidebar-contact a.tel:hover { color: var(--red); }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--black); padding: 48px 60px 28px; margin-top: 80px; }
+    .footer-inner { max-width: 1600px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #222; }
+    .footer-brand .logo { display: block; margin-bottom: 12px; }
+    .footer-brand .logo img { filter: brightness(0) invert(1); height: 52px; }
+    .footer-brand p { font-size: 13px; color: #666; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: 11px; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 13px; color: #666; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copy { font-size: 12px; color: #444; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .page-body { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
+      .sidebar { position: static; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+      footer { padding: 48px 24px 28px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40723371537">0723 371 537</a>
+        <a href="https://web.whatsapp.com/send?phone=+40723371537" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#" class="active">Servicii</a>
+          <div class="dropdown">
+            <a href="/servicii/administrare-financiara/" class="active">Administrare financiara</a>
+            <a href="/servicii/administrare-tehnica/">Administrare tehnica</a>
+            <a href="/servicii/intretinere-reparatii/">Intretinere si reparatii</a>
+            <a href="/servicii/">Toate serviciile</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="/administrare-blocuri-sector-1/">Sector 1</a>
+            <a href="/administrare-blocuri-sector-2/">Sector 2</a>
+            <a href="/administrare-blocuri-sector-3/">Sector 3</a>
+            <a href="/administrare-blocuri-sector-4/">Sector 4</a>
+            <a href="/administrare-blocuri-sector-5/">Sector 5</a>
+            <a href="/administrare-blocuri-sector-6/">Sector 6</a>
+            <a href="/administrare-blocuri-ilfov/">Ilfov</a>
+          </div>
+        </li>
+        <li><a href="/legislatie/">Legislatie</a></li>
+        <li><a href="/sesizari/">Sesizari</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40723371537">0723 371 537</a></div>
+        <a href="/#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/servicii/">Servicii</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Administrare financiara</span>
+      </div>
+      <h1>Administrare blocuri &mdash; <em>financiar</em></h1>
+      <p class="page-hero-desc">Evidenta completa a documentelor financiare pentru asociatii de proprietari din Bucuresti si Ilfov. Un serviciu transparent, sustinut de economisti cu studii superioare, atestati in administrarea imobilelor.</p>
+    </div>
+  </div>
+
+  <!-- CONTINUT -->
+  <div class="page-body">
+    <main>
+
+      <!-- 1. EVIDENTA DOCUMENTE -->
+      <div class="content-section">
+        <div class="section-title-red">Evidenta documentelor financiare</div>
+        <div class="content-block">
+          <p>Gestionam toate documentele contabile necesare asociatiei de proprietari, cu respectarea prevederilor legii asociatiilor, cu exceptia celor aflate in arhiva: facturi, chitante, solicitari diverse, registru de casa, registru de banca, evidenta fondurilor asociatiei (fond de rulment, fond de reparatii, fond modernizari si diverse).</p>
+          <p>Toate aceste evidente sunt pastrate in format electronic, cu ajutorul unui program licentiat de contabilitate destinat asociatiilor de proprietari, si pot fi puse la dispozitie atat digital (online sau prin e-mail) cat si tiparite, la solicitarea persoanelor autorizate.</p>
+        </div>
+      </div>
+
+      <!-- 2. LISTE INTRETINERE -->
+      <div class="content-section">
+        <div class="section-title-red">Intocmire liste de intretinere lunare</div>
+        <div class="content-block">
+          <p>Dupa preluarea facturilor de utilitati, a indexurilor consumurilor individuale si a celorlalte informatii disponibile, intocmim lista de plata a cotelor de intretinere pentru luna respectiva.</p>
+          <p>Modelul de lista pe care il folosim este personalizat pentru fiecare asociatie in parte. Fiecare tip de cheltuiala are o coloana distincta, pentru o intelegere cat mai clara. <strong>Fiecare proprietar poate accesa online situatia sa</strong> si stie exact ce are de platit pentru fiecare utilitate sau serviciu.</p>
+        </div>
+      </div>
+
+      <!-- 3. REGISTRE -->
+      <div class="content-section">
+        <div class="section-title-red">Intocmire registre obligatorii</div>
+        <div class="content-block">
+          <p>Ne ocupam de completarea la zi si de evidenta contabila a asociatiei dumneavoastra, conform cerintelor legale: registru de casa, registru de banca, evidenta fondurilor (fond de rulment, fond de reparatii, fond de modernizari si alte fonduri).</p>
+        </div>
+      </div>
+
+      <!-- 4. PLATA FURNIZORI -->
+      <div class="content-section">
+        <div class="section-title-red">Plata furnizorilor de utilitati</div>
+        <div class="content-block">
+          <p>In limita sumelor disponibile, achitam facturile furnizorilor de servicii si utilitati ai asociatiei, inainte de termenele scadente, pentru a evita orice penalizari.</p>
+          <p>In cea mai mare parte, operatiunile sunt efectuate prin transfer bancar, de regula prin Internet Banking. Exista si posibilitatea ca noi sa initiem transferurile iar presedintele sau comitetul asociatiei sa le aprobe.</p>
+        </div>
+      </div>
+
+      <!-- 5. TAXE SI IMPOZITE -->
+      <div class="content-section">
+        <div class="section-title-red">Plata taxelor si impozitelor</div>
+        <div class="content-block">
+          <p>In situatia in care asociatia are angajati si doreste sa pastreze aceasta structura, ne ocupam de calculul si achitarea taxelor si impozitelor aferente, conform legislatiei in vigoare.</p>
+        </div>
+      </div>
+
+      <!-- 6. INCASARI -->
+      <div class="content-section">
+        <div class="section-title-red">Incasarea cotelor de intretinere de la proprietari</div>
+        <div class="content-block">
+          <p>Conform unui program prestabilit, incasam cotele de intretinere de la membrii asociatiei, in spatiul pus la dispozitie de asociatie. Oferim si posibilitatea platii cu cardul. La incasarea in numerar la casierie aplicam inregistrarea tripla (chitanta, lista de plata si fisa de incasari) pentru a elimina orice risc de eroare.</p>
+          <p>Toti proprietarii pot achita cotele de intretinere <strong>non-stop</strong> prin transfer bancar direct in contul asociatiei.</p>
+        </div>
+      </div>
+
+      <!-- 7. RELATIE BANCA -->
+      <div class="content-section">
+        <div class="section-title-red">Relatia cu banca</div>
+        <div class="content-block">
+          <p>Mentinem relatia cu banca la care asociatia are cont deschis, inclusiv pentru depuneri de numerar si ridicari de extrase de cont.</p>
+        </div>
+      </div>
+
+      <!-- 8. RELATIE FURNIZORI -->
+      <div class="content-section">
+        <div class="section-title-red">Relatia cu furnizorii</div>
+        <div class="content-block">
+          <p>Gestionam relatia cu ceilalti furnizori de servicii sau utilitati ai asociatiei. Pentru fiecare furnizor se creeaza o fisa separata in care sunt evidentiate facturile primite si platile efectuate.</p>
+        </div>
+      </div>
+
+      <!-- 9. ALTE PROBLEME -->
+      <div class="content-section">
+        <div class="section-title-red">Rezolvarea altor situatii administrative</div>
+        <div class="content-block">
+          <p>Pot aparea situatii administrative atipice care nu pot fi anticipate la momentul semnarii contractului. Indiferent de natura acestora, cand apar, <strong>le rezolvam</strong>.</p>
+        </div>
+      </div>
+
+      <!-- 10. TRANSMITERE DOCUMENTE -->
+      <div class="content-section">
+        <div class="section-title-red">Transmitere documente si liste prin e-mail</div>
+        <div class="content-block">
+          <p>Atat listele de plata cat si alte documente de interes (fise de apartament, facturi scanate etc.) pot fi transmise la cerere prin e-mail.</p>
+          <p>Toate evidentele contabile, soldurile, operatiunile si registrele asociatiei pot fi accesate permanent online pe serverele noastre sau solicitate prin e-mail de catre comitetul executiv.</p>
+        </div>
+      </div>
+
+      <!-- DECLARATII FISCALE -->
+      <div class="nota-finala">
+        <p>In cazul in care asociatia are angajati sau colaboratori cu contract de munca sau conventii civile, se adauga serviciul de <strong>depunere a declaratiilor fiscale</strong> — 50 lei / luna / asociatie. Acest serviciu este externalizat catre o firma specializata in resurse umane, pentru o mai mare acuratete a datelor transmise autoritatilor.</p>
+      </div>
+
+      <!-- NOTA FINALA -->
+      <p style="font-size:14px; color:var(--gray-mid); margin-top:32px; font-style:italic;">Activitatea de administrare financiara este asigurata de persoane cu pregatire superioara in domeniul economic, atestate in activitatea de administrare a imobilelor.</p>
+
+      <!-- TESTIMONIALE -->
+      <div class="testimoniale">
+        <div class="testimoniale-title">Vocea clientului</div>
+        <div class="testimonial-card">
+          <p>De cand administrarea blocului a fost preluata de MP Group nu mai avem neintelegerile de altadata legate de listele de intretinere. Totul este atat de clar si transparent incat nu mai exista subiecte de cearta. Multumim si tineti-o tot asa!</p>
+        </div>
+        <div class="testimonial-card">
+          <p>Simplu, profesionist si eficient. Un serviciu de care aveam mare nevoie. MP Group ne-a ajutat sa ne imprietenim in bloc — nu mai avem motive de dispute. Felicitari si multumim!</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Servicii administrare</div>
+        <ul class="sidebar-links">
+          <li><a href="/servicii/administrare-financiara/" class="active">Administrare financiara</a></li>
+          <li><a href="/servicii/administrare-tehnica/">Administrare tehnica</a></li>
+          <li><a href="/servicii/intretinere-reparatii/">Intretinere si reparatii</a></li>
+          <li><a href="/servicii/">Alte servicii</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Zone</div>
+        <ul class="sidebar-links">
+          <li><a href="/administrare-blocuri-sector-1/">Sector 1</a></li>
+          <li><a href="/administrare-blocuri-sector-2/">Sector 2</a></li>
+          <li><a href="/administrare-blocuri-sector-3/">Sector 3</a></li>
+          <li><a href="/administrare-blocuri-sector-4/">Sector 4</a></li>
+          <li><a href="/administrare-blocuri-sector-5/">Sector 5</a></li>
+          <li><a href="/administrare-blocuri-sector-6/">Sector 6</a></li>
+          <li><a href="/administrare-blocuri-ilfov/">Ilfov</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-contact">
+        <p>Solicita o oferta pentru blocul tau. Raspundem prompt.</p>
+        <a href="/#formular" class="btn">Solicita oferta</a>
+        <a href="tel:+40723371537" class="tel">0723 371 537</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo"><img src="/logo.png" alt="MP Group" /></a>
+          <p>Servicii de administrare blocuri si imobile pentru asociatii de proprietari din Bucuresti si Ilfov. Activi din 1992.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Servicii</h5>
+          <ul>
+            <li><a href="/servicii/administrare-financiara/">Administrare financiara</a></li>
+            <li><a href="/servicii/administrare-tehnica/">Administrare tehnica</a></li>
+            <li><a href="/servicii/intretinere-reparatii/">Intretinere si reparatii</a></li>
+            <li><a href="/servicii/">Alte servicii</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Zone</h5>
+          <ul>
+            <li><a href="/administrare-blocuri-sector-1/">Sector 1</a></li>
+            <li><a href="/administrare-blocuri-sector-2/">Sector 2</a></li>
+            <li><a href="/administrare-blocuri-sector-3/">Sector 3</a></li>
+            <li><a href="/administrare-blocuri-sector-4/">Sector 4</a></li>
+            <li><a href="/administrare-blocuri-sector-5/">Sector 5</a></li>
+            <li><a href="/administrare-blocuri-sector-6/">Sector 6</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Informatii</h5>
+          <ul>
+            <li><a href="/legislatie/">Legislatie</a></li>
+            <li><a href="/sesizari/">Sesizari</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
