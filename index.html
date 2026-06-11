@@ -49,9 +49,9 @@
       padding: 8px 0;
     }
     .topbar-inner {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 0 60px;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -85,9 +85,9 @@
       z-index: 100;
     }
     .nav-inner {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 0 60px;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 32px;
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
@@ -1036,7 +1036,7 @@
       .topbar-text { display: none; }
 
       /* Navbar */
-      .nav-inner { padding: 0 16px; height: 60px; }
+      .nav-inner { padding: 0 24px 0 0; height: 60px; }
       .logo img { height: 40px; }
       .nav-right { display: none; }
 
@@ -1358,7 +1358,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:var(--font-body,'Nunito',sans-serif);font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#">Servicii</a>
@@ -1467,7 +1467,7 @@
         <div class="stat-label">Sectoare Bucuresti</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-target="50" data-suffix="k€">0</div>
+        <div class="stat-num">50.000€</div>
         <div class="stat-label">Asigurare profesionala</div>
       </div>
       <div class="stat-item">

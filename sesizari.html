@@ -27,7 +27,7 @@
     .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
     .topbar-contact a:hover { text-decoration: underline; }
     nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 24px 0 0; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
     .logo { display: flex; align-items: center; }
     .logo img { height: 48px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
@@ -76,7 +76,7 @@
     .form-submit:hover { background: var(--red-dark); }
     footer { background: #111; padding: 0; margin-top: 80px; }
     @media (max-width: 960px) {
-      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .topbar-inner, .nav-inner { padding: 0 24px 0 0; }
       .page-hero { padding: 40px 24px; }
       .page-body { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
       .nav-links { display: none; }
@@ -222,7 +222,7 @@
       .topbar-text { display: none; }
 
       /* Navbar */
-      .nav-inner { padding: 0 16px; height: 60px; }
+      .nav-inner { padding: 0 24px 0 0; height: 60px; }
       .logo img { height: 40px; }
       .nav-right { display: none; }
 
@@ -411,7 +411,7 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:var(--font-body,'Nunito',sans-serif);font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#">Servicii</a>
