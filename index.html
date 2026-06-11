@@ -2,15 +2,13 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MP Group – Administrare blocuri si imobile Bucuresti</title>
-  <meta name="description" content="Servicii de administrare blocuri si imobile in Bucuresti si Ilfov. Administrator bloc atestat, contabilitate asociatii de proprietari, interventii tehnice, acces online. Activi din 1992." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Administrare Blocuri Bucuresti | MP Group SRL – Administrator Atestat din 1992</title>
+  <meta name="description" content="MP Group SRL – firma de administrare blocuri in Bucuresti si Ilfov, activa din 1992. Administrator bloc atestat, contabilitate asociatii proprietari, incasare intretinere, administrare tehnica, cenzorat. Oferta gratuita." />
 
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 
   <style>
@@ -899,7 +897,441 @@
       .hero { padding: 60px 20px 52px; }
       .section { padding: 48px 20px; }
     }
+
+    /* ===== MOBILE OPTIMIZAT ===== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--white);
+      z-index: 999;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-menu.open .mobile-menu-panel {
+      transform: translateX(0);
+    }
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--red);
+      background: var(--black);
+    }
+    .mobile-menu-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .mobile-menu-logo span { color: var(--red); }
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-close svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .mobile-menu-links {
+      flex: 1;
+      padding: 12px 0;
+    }
+    .mobile-menu-links a {
+      display: block;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-border);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: var(--red); background: var(--gray-bg); }
+    .mobile-menu-links .mobile-section-title {
+      padding: 10px 20px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--gray-bg);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .mobile-menu-links .mobile-sub a {
+      padding-left: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .mobile-menu-footer {
+      padding: 20px;
+      background: var(--black);
+      border-top: 2px solid var(--red);
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .mobile-menu-footer .mobile-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-menu-footer .mobile-phones a {
+      font-size: 13px;
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+    }
+    .mobile-menu-footer .mobile-phones a:hover { color: var(--white); }
+
+    /* Hamburger activ */
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .hamburger span { transition: all 0.3s; }
+
+    @media (max-width: 768px) {
+      /* Topbar */
+      .topbar-inner { padding: 0 16px; }
+      .topbar-text { display: none; }
+
+      /* Navbar */
+      .nav-inner { padding: 0 16px; height: 60px; }
+      .logo img { height: 40px; }
+      .nav-right { display: none; }
+
+      /* Hero */
+      .hero { padding: 40px 16px 36px !important; }
+      .hero h1 { font-size: 28px !important; }
+      .hero-desc { font-size: 14px !important; }
+      .hero-card { display: none !important; }
+      .hero-inner { grid-template-columns: 1fr !important; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-item:nth-child(2) { border-right: none !important; }
+      .stat-item { padding: 8px 12px !important; }
+      .stat-num { font-size: 26px !important; }
+
+      /* Why grid */
+      .why-grid { grid-template-columns: 1fr !important; }
+      .why-item { border-right: none !important; border-bottom: 1px solid var(--gray-border) !important; }
+      .why-item:last-child { border-bottom: none !important; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr !important; }
+
+      /* Zone */
+      .zone-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Contract */
+      .contract-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Lege */
+      .lege-inner { grid-template-columns: 1fr !important; padding: 40px 16px !important; }
+
+      /* Form */
+      .form-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Footer */
+      footer { padding: 0 !important; }
+      .footer-top { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 16px !important; }
+      .footer-bottom { padding: 16px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+
+      /* Page body */
+      .page-body { grid-template-columns: 1fr !important; padding: 28px 16px !important; gap: 28px !important; }
+      .page-hero { padding: 32px 16px !important; }
+      .page-hero h1 { font-size: 26px !important; }
+      .section { padding: 40px 16px !important; }
+      .section-inner { padding: 0 !important; }
+
+      /* Blog grid */
+      .blog-grid { grid-template-columns: 1fr !important; }
+      .blog-grid-wrap { padding: 32px 16px !important; }
+      .blog-hero { padding: 40px 16px !important; }
+      .blog-hero h1 { font-size: 28px !important; }
+
+      /* Article */
+      .article-body { padding: 28px 16px !important; }
+      .related-articles { padding: 28px 16px !important; }
+      .related-grid { grid-template-columns: 1fr !important; }
+
+      /* Lege grid */
+      .lege-grid { grid-template-columns: 1fr !important; }
+
+      /* Promotii */
+      .section[style*="var(--red)"] .section-inner { flex-direction: column !important; text-align: center !important; }
+
+      /* Sidebar */
+      .sidebar { position: static !important; }
+    }
+
+    @media (max-width: 480px) {
+      .zone-grid { grid-template-columns: 1fr !important; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .hero-tags { gap: 6px !important; }
+      .tag { font-size: 11px !important; padding: 4px 10px !important; }
+      .hero-actions { flex-direction: column !important; }
+      .btn-primary, .btn-secondary { width: 100% !important; text-align: center !important; }
+    }
+
+    /* HOMEPAGE BLOG GRID */
+    .homepage-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .homepage-blog-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    }
+
+    /* FIX OVERFLOW GLOBAL */
+    html, body { overflow-x: hidden; max-width: 100%; }
+    * { box-sizing: border-box; }
+
+    /* FIX FOOTER MOBIL */
+    @media (max-width: 900px) {
+      #footer-main { grid-template-columns: 1fr !important; }
+      #footer-left { border-right: none !important; padding: 32px 20px !important; border-bottom: 1px solid #1e1e1e; }
+      #footer-right { grid-template-columns: 1fr 1fr !important; padding: 28px 20px !important; gap: 20px !important; }
+    }
+    @media (max-width: 560px) {
+      #footer-right { grid-template-columns: 1fr !important; padding: 24px 20px !important; }
+      #footer-left { padding: 28px 20px !important; }
+      .footer-bottom { padding: 14px 20px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+    }
+
+    /* FIX HAMBURGER */
+    @media (max-width: 1024px) {
+      .nav-right { display: none !important; }
+    }
+  
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
   </style>
+
+  <!-- ===== SEO MAXIM MP GROUP SRL ===== -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="author" content="MP Group SRL" />
+  <meta name="copyright" content="MP Group SRL" />
+  <meta name="keywords" content="administrare blocuri bucuresti, administrator bloc bucuresti, firma administrare blocuri bucuresti, administrare imobile bucuresti, administrator atestat bucuresti, asociatie proprietari bucuresti, administrare blocuri sector 1 bucuresti, administrare blocuri sector 2 bucuresti, administrare blocuri sector 3 bucuresti, administrare blocuri sector 4 bucuresti, administrare blocuri sector 5 bucuresti, administrare blocuri sector 6 bucuresti, administrare blocuri ilfov, administrare blocuri voluntari, administrare blocuri popesti leordeni, administrare blocuri ploiesti, contabilitate asociatie proprietari, liste intretinere bloc, fond reparatii bloc, fond rulment bloc, incasare cote intretinere, plata intretinere online, plata intretinere card, plata intretinere selfpay, plata intretinere paypoint, administrator bloc atestat, certificat calificare administrator, lege 196 2018 asociatii proprietari, schimbare administrator bloc, contract administrare bloc, oferta administrare bloc, pret administrare bloc, tarif administrare bloc, firma administrare imobile bucuresti, companie administrare blocuri, servicii administrare bloc, administrare condominium, administrare asociatie proprietari bucuresti, evidente contabile asociatie proprietari, registru casa asociatie, transparenta cheltuieli bloc, acces online proprietari, platforma online bloc, vizualizare lista intretinere online, restante intretinere bloc, recuperare debite asociatie, penalizari intretinere, administrator tehnic bloc, reparatii parti comune bloc, curatenie casa scari, dezinsectie bloc, deratizare bloc, hidroizolatie bloc, reparatie instalatii bloc, verificare contoare individuale, cenzor asociatie proprietari, cenzorat asociatii proprietari, expert contabil asociatie proprietari, polita asigurare administrator bloc, asigurare raspundere profesionala administrator, program casierie bloc, adunare generala bloc, presedinte asociatie proprietari, comitet executiv bloc, mp group administrare blocuri, mp group srl bucuresti, mpgroupsrl ro, administrare bloc activi din 1992, firma administrare 30 ani experienta, administrator bloc sector 1, administrator bloc sector 2, administrator bloc sector 3, administrator bloc sector 4, administrator bloc sector 5, administrator bloc sector 6, administrare bloc bucuresti pret, administrare imobil bucuresti, gestiune asociatie proprietari, administrare blocuri profesionala bucuresti, firma administrare blocuri sector 1, firma administrare blocuri sector 2, firma administrare blocuri sector 3, cel mai bun administrator de bloc din bucuresti, administrator atestat bucuresti 2024, administrare blocuri tarife bucuresti, servicii complete administrare bloc, administrare bloc eficienta, transparency bloc proprietari, plata intretinere mobilpay, plata intretinere aplicatie, incasare intretinere numerar, fond reparatii constituit, lege bloc 2024 romania, lege asociatii proprietari 2024" />
+  <meta name="geo.region" content="RO" />
+  <meta name="geo.placename" content="Bucuresti, Romania" />
+  <meta name="geo.position" content="44.4268;26.1025" />
+  <meta name="ICBM" content="44.4268, 26.1025" />
+  <meta name="language" content="Romanian" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <link rel="canonical" href="https://www.mpgroupsrl.ro/" />
+  <link rel="alternate" hreflang="ro" href="https://www.mpgroupsrl.ro/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.mpgroupsrl.ro/" />
+
+  <!-- Preconnect pentru performanta (afecteaza ranking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Administrare Blocuri Bucuresti | MP Group SRL – Administrator Atestat din 1992" />
+  <meta property="og:description" content="MP Group SRL – firma de administrare blocuri in Bucuresti si Ilfov, activa din 1992. Administrator bloc atestat, contabilitate asociatii proprietari, incasare intretinere, administrare tehnica, cenzorat. Oferta gratuita." />
+  <meta property="og:url" content="https://www.mpgroupsrl.ro/" />
+  <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Administrare Blocuri Bucuresti | MP Group SRL – Administrator Atestat din 1992" />
+  <meta name="twitter:description" content="MP Group SRL – firma de administrare blocuri in Bucuresti si Ilfov, activa din 1992. Administrator bloc atestat, contabilitate asociatii proprietari, incasare intretinere, administrare tehnica, cenzorat. Oferta gratuita." />
+  <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta name="twitter:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://www.mpgroupsrl.ro/#organization",
+  "name": "MP Group SRL",
+  "legalName": "MP GROUP SRL",
+  "description": "Firma de administrare blocuri si imobile din Bucuresti si Ilfov, activa din 1992. Administrator atestat, experti contabili, personal tehnic autorizat.",
+  "url": "https://www.mpgroupsrl.ro",
+  "logo": "https://www.mpgroupsrl.ro/logo.png",
+  "image": "https://www.mpgroupsrl.ro/logo.png",
+  "telephone": ["+40213320392", "+40744652156"],
+  "email": "info@mpgroupsrl.ro",
+  "foundingDate": "1992",
+  "priceRange": "$$",
+  "currenciesAccepted": "RON",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer, Online",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bucuresti",
+    "addressCountry": "RO"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Bucuresti"},
+    {"@type": "City", "name": "Voluntari"},
+    {"@type": "City", "name": "Popesti-Leordeni"},
+    {"@type": "City", "name": "Ploiesti"}
+  ],
+  "serviceType": ["Administrare blocuri", "Administrare imobile", "Contabilitate asociatii proprietari", "Cenzorat asociatii proprietari"],
+  "sameAs": ["https://www.facebook.com/mpgroup.ro/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicii administrare blocuri",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Administrare financiara bloc"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Incasare cote intretinere"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Administrare tehnica bloc"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cenzorat asociatii proprietari"}}
+    ]
+  }
+},
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ce servicii ofera MP Group pentru administrarea blocurilor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP Group ofera servicii complete: administrare financiara, incasare cote intretinere prin numerar/card/online, verificari contabile, administrare tehnica si cenzorat asociatii proprietari."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In ce zone din Bucuresti activeaza MP Group?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP Group administreaza blocuri in toate cele 6 sectoare ale Bucurestiului si in Ilfov: Voluntari, Popesti-Leordeni, precum si in Ploiesti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De cat timp este activ MP Group in administrarea blocurilor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP Group este activ in administrarea blocurilor din 1992, avand peste 30 de ani de experienta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are administratorul MP Group atestat legal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Administratorul MP Group detine certificat de calificare profesionala si atestat emis de autoritatea locala conform Legii 196/2018, plus polita de asigurare de raspundere profesionala de 50.000 Euro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum pot plati proprietarii cota de intretinere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prin: numerar la casierie, card POS, transfer bancar, plata online, MobilPay, PayPoint si SELFPAY la comerciantii parteneri."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum pot vedea proprietarii lista de intretinere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP Group ofera acces online gratuit si permanent la listele de intretinere si istoricul platilor. Proprietarii nu depind de avizier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce inseamna polita de asigurare de 50.000 Euro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conform Legii 196/2018, MP Group pune la dispozitia fiecarei asociatii o polita de asigurare de raspundere profesionala de 50.000 Euro, care protejeaza asociatia in cazul unor erori ale administratorului."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum se schimba administratorul de bloc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prin hotararea adunarii generale, notificarea scris a administratorului actual, predarea-primirea documentelor si actualizarea semnatarilor la banca."
+      }
+    }
+  ]
+}]
+  </script>
+  <!-- ===== END SEO ===== -->
 </head>
 <body>
 
@@ -926,7 +1358,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo"><img src="logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#">Servicii</a>
@@ -953,7 +1385,8 @@
         </li>
         <li><a href="legislatie.html">Legislatie</a></li>
         <li><a href="sesizari.html">Sesizari</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#formular">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
       </ul>
       <div class="nav-right">
         <div class="nav-phone">
@@ -961,7 +1394,7 @@
         </div>
         <a href="#formular" class="nav-cta">Solicita oferta</a>
       </div>
-      <button class="hamburger" aria-label="Meniu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="hamburger" aria-label="Meniu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1218,6 +1651,48 @@
   </section>
 
 
+  <!-- BLOG -->
+  <section class="section" style="background:var(--gray-bg);" id="blog">
+    <div class="section-inner">
+      <p class="section-eyebrow">Blog</p>
+      <h2 class="section-title">Informatii utile pentru <em>proprietari</em></h2>
+      <p class="section-desc">Ghiduri practice despre administrarea blocurilor, drepturile asociatiei si legislatia in vigoare.</p>
+      <div class="homepage-blog-grid">
+
+        <a href="administrator-bloc-bucuresti.html" style="text-decoration:none;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--gray-border);border-radius:8px;overflow:hidden;transition:box-shadow 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
+          <img src="img-1.jpg" alt="Administrator bloc Bucuresti" style="width:100%;height:200px;object-fit:cover;display:block;background:#f0f0f0;" onerror="this.style.background='#e8e8e8';this.style.minHeight='200px'">
+          <div style="padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Ghid &bull; 10 iunie 2026</div>
+            <h3 style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--black);line-height:1.4;margin-bottom:10px;flex:1;">Cum alegi un administrator de bloc in Bucuresti — ce sa verifici inainte sa semnezi contractul</h3>
+            <span style="font-size:12px;color:var(--red);font-weight:700;">Citeste articolul &rarr;</span>
+          </div>
+        </a>
+
+        <a href="drepturi-obligatii-asociatie-proprietari.html" style="text-decoration:none;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--gray-border);border-radius:8px;overflow:hidden;transition:box-shadow 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
+          <img src="img-2.jpg" alt="Drepturi asociatie proprietari" style="width:100%;height:200px;object-fit:cover;display:block;background:#f0f0f0;" onerror="this.style.background='#e8e8e8';this.style.minHeight='200px'">
+          <div style="padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Legislatie &bull; 8 iunie 2026</div>
+            <h3 style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--black);line-height:1.4;margin-bottom:10px;flex:1;">Drepturile si obligatiile asociatiei de proprietari — ce trebuie sa stie fiecare locatar</h3>
+            <span style="font-size:12px;color:var(--red);font-weight:700;">Citeste articolul &rarr;</span>
+          </div>
+        </a>
+
+        <a href="restante-intretinere-lege.html" style="text-decoration:none;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--gray-border);border-radius:8px;overflow:hidden;transition:box-shadow 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
+          <img src="img-3.jpg" alt="Restante intretinere bloc" style="width:100%;height:200px;object-fit:cover;display:block;background:#f0f0f0;" onerror="this.style.background='#e8e8e8';this.style.minHeight='200px'">
+          <div style="padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Juridic &bull; 5 iunie 2026</div>
+            <h3 style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--black);line-height:1.4;margin-bottom:10px;flex:1;">Restante la intretinere — ce poate face asociatia conform Legii 196/2018</h3>
+            <span style="font-size:12px;color:var(--red);font-weight:700;">Citeste articolul &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+      <div style="text-align:center;">
+        <a href="blog.html" style="display:inline-block;background:transparent;color:var(--red);border:1.5px solid var(--red);font-size:13px;font-weight:600;padding:12px 32px;border-radius:3px;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;">Vezi toate articolele &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PROMOTII -->
   <section class="section" style="background: var(--red); padding: 40px 60px;">
     <div class="section-inner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; max-width:1600px;">
@@ -1246,13 +1721,13 @@
             </div>
             <div class="contact-row">
               <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:contact@mpgroup.ro">contact@mpgroup.ro</a>
+              <a href="mailto:info@mpgroupsrl.ro">info@mpgroupsrl.ro</a>
             </div>
           </div>
         </div>
         <div class="form-box">
           <h4>Cerere de oferta</h4>
-          <form action="#" method="POST">
+          <form id="cerere-form" onsubmit="trimiteFormular(event)">
             <div class="form-row">
               <label for="nume">Nume si prenume *</label>
               <input type="text" id="nume" name="nume" required placeholder="ex. Ion Popescu" />
@@ -1286,9 +1761,9 @@
 
   <!-- FOOTER -->
   <footer style="background:#111; padding:0; margin-top:0;">
-    <div style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid #1e1e1e; max-width:1600px; margin:0 auto;">
+    <div id="footer-main" style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid #1e1e1e; max-width:1600px; margin:0 auto;">
       <!-- STANGA -->
-      <div style="padding:52px 60px; border-right:1px solid #1e1e1e;">
+      <div id="footer-left" style="padding:52px 60px; border-right:1px solid #1e1e1e;">
         <a href="index.html" style="display:inline-block; margin-bottom:14px; text-decoration:none;">
           <span style="font-family:var(--font-body); font-size:28px; font-weight:700; color:#fff; letter-spacing:-0.3px;">MP<span style="color:var(--red);">Group</span></span>
         </a>
@@ -1308,7 +1783,7 @@
         </div>
       </div>
       <!-- DREAPTA - 3 coloane link-uri -->
-      <div style="padding:52px 60px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px;">
+      <div id="footer-right" style="padding:52px 60px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px;">
         <div>
           <div style="font-size:10px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #1e1e1e;">Servicii</div>
           <ul style="list-style:none;">
@@ -1338,7 +1813,7 @@
           <ul style="list-style:none;">
             <li style="margin-bottom:9px;"><a href="legislatie.html" style="font-size:13px; color:#555; text-decoration:none;">Legislatie</a></li>
             <li style="margin-bottom:9px;"><a href="sesizari.html" style="font-size:13px; color:#555; text-decoration:none;">Sesizari</a></li>
-            <li style="margin-bottom:9px;"><a href="contact.html" style="font-size:13px; color:#555; text-decoration:none;">Contact</a></li>
+            <li style="margin-bottom:9px;"><a href="#formular" style="font-size:13px; color:#555; text-decoration:none;">Contact</a></li>
             <li style="margin-bottom:9px;"><a href="https://www.blocexpert.ro/app/files/index.php" target="_blank" rel="noopener" style="font-size:13px; color:#555; text-decoration:none;">Acces online clienti</a></li>
             <li style="margin-bottom:9px;"><a href="termeni.html" style="font-size:13px; color:#555; text-decoration:none;">Termeni si conditii</a></li>
             <li style="margin-bottom:9px;"><a href="confidentialitate.html" style="font-size:13px; color:#555; text-decoration:none;">Confidentialitate</a></li>
@@ -1398,5 +1873,107 @@
 
     observer.observe(statsBar);
   </script>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="administrare-financiara.html">Administrare financiara</a>
+          <a href="incasare-cote.html">Incasare cote intretinere</a>
+          <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="administrare-tehnica.html">Administrare tehnica</a>
+          <a href="cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="sector-1.html">Sector 1</a>
+          <a href="sector-2.html">Sector 2</a>
+          <a href="sector-3.html">Sector 3</a>
+          <a href="sector-4.html">Sector 4</a>
+          <a href="sector-5.html">Sector 5</a>
+          <a href="sector-6.html">Sector 6</a>
+          <a href="voluntari.html">Voluntari</a>
+          <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="legislatie.html">Legislatie</a>
+        <a href="sesizari.html">Sesizari</a>
+        <a href="blog.html">Blog</a>
+        <a href="#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function trimiteFormular(e) {
+      e.preventDefault();
+      var nume = document.getElementById('nume').value;
+      var tel = document.getElementById('tel').value;
+      var email = document.getElementById('email').value;
+      var adresa = document.getElementById('adresa').value;
+      var apartamente = document.getElementById('apartamente').value;
+      var mesaj = document.getElementById('mesaj').value;
+
+      var subject = encodeURIComponent('Cerere oferta administrare bloc – ' + nume);
+      var body = encodeURIComponent(
+        'Cerere de oferta administrare bloc\n' +
+        '=====================================\n\n' +
+        'Nume si prenume: ' + nume + '\n' +
+        'Telefon: ' + tel + '\n' +
+        'Email: ' + email + '\n' +
+        'Adresa imobil: ' + adresa + '\n' +
+        'Numar apartamente: ' + apartamente + '\n\n' +
+        'Mesaj:\n' + (mesaj || '–') + '\n\n' +
+        '=====================================\n' +
+        'Cerere trimisa prin formularul de pe mpgroupsrl.ro'
+      );
+
+      window.location.href = 'mailto:info@mpgroupsrl.ro?subject=' + subject + '&body=' + body;
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      });
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) {
+          menu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var hamburger = document.querySelector('.hamburger');
+      if (!menu || !hamburger) return;
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+
 </body>
 </html>

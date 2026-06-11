@@ -2,12 +2,10 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administrare Blocuri Sector 1 Bucuresti – MP Group</title>
-  <meta name="description" content="Servicii complete de administrare blocuri si imobile pentru asociatii de proprietari din Sectorul 1 Bucuresti. Administrator atestat, experti contabili, personal tehnic. MP Group." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei</title>
+  <meta name="description" content="Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992." />
   <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +16,9 @@
       --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body {
+      overflow-x: hidden;
+      max-width: 100%; font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
     .topbar { background: var(--red); padding: 8px 0; }
     .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
@@ -27,7 +27,7 @@
     .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
     .topbar-contact a:hover { text-decoration: underline; }
     nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 70px; gap: 32px; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
     .logo { display: flex; align-items: center; }
     .logo img { height: 48px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
@@ -89,7 +89,7 @@
     footer { background: var(--black); padding: 48px 60px 28px; margin-top: 80px; }
     .footer-inner { max-width: 1600px; margin: 0 auto; }
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #222; }
-    .footer-brand .logo img { filter: brightness(0) invert(1); height: 52px; margin-bottom: 12px; }
+    .footer-brand .logo img { height: 52px; margin-bottom: 12px; }
     .footer-brand p { font-size: 13px; color: #666; line-height: 1.65; max-width: 260px; }
     .footer-col h5 { font-size: 11px; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
     .footer-col ul { list-style: none; }
@@ -109,7 +109,197 @@
       footer { padding: 48px 24px 28px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
-</style>
+
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 300px;
+      height: 100%;
+      background: #ffffff;
+      z-index: 999;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+    .mobile-menu-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-bottom: 2px solid #cc2222;
+      background: #111111; flex-shrink: 0;
+    }
+    .mobile-menu-logo { font-size: 18px; font-weight: 700; color: #fff; }
+    .mobile-menu-logo span { color: #cc2222; }
+    .mobile-menu-close {
+      background: none; border: none; cursor: pointer;
+      padding: 4px; display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-menu-close svg { width: 22px; height: 22px; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .mobile-menu-links { flex: 1; padding: 0; overflow-y: auto; }
+    .mobile-menu-links a {
+      display: block; padding: 14px 20px; font-size: 14px; font-weight: 600;
+      color: #111111; border-bottom: 1px solid #e0e0e0; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: #cc2222; background: #f7f7f7; }
+    .mobile-section-title {
+      padding: 10px 20px 8px; font-size: 10px; font-weight: 700;
+      color: #cc2222; text-transform: uppercase; letter-spacing: 0.1em;
+      background: #f7f7f7; border-bottom: 1px solid #e0e0e0;
+    }
+    .mobile-sub a {
+      padding-left: 32px !important; font-size: 13px !important;
+      font-weight: 500 !important; text-transform: none !important; letter-spacing: 0 !important;
+    }
+    .mobile-menu-footer {
+      padding: 20px; background: #111111;
+      border-top: 2px solid #cc2222; flex-shrink: 0;
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block; background: #cc2222; color: #fff !important;
+      text-align: center; padding: 13px; border-radius: 3px;
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; text-decoration: none; margin-bottom: 12px;
+    }
+    .mobile-phones { display: flex; flex-direction: column; gap: 6px; }
+    .mobile-phones a { font-size: 13px; color: #aaa !important; text-decoration: none !important; text-align: center; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #111; border-radius: 2px; transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
+  </style>
+
+  <!-- ===== SEO MAXIM MP GROUP SRL ===== -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="author" content="MP Group SRL" />
+  <meta name="copyright" content="MP Group SRL" />
+  <meta name="keywords" content="administrare blocuri sector 1 bucuresti, administrator bloc sector 1, firma administrare sector 1, asociatie proprietari sector 1, administrator atestat sector 1, administrare bloc aviatiei, administrare bloc baneasa, administrare bloc dorobanti, administrare bloc floreasca, administrare bloc victoriei, administrare bloc herastrau, administrare bloc primaverii, administrare bloc kiseleff, administrare bloc calea victoriei, administrare bloc piata romana, administrare bloc piata victoriei, schimbare administrator sector 1, oferta administrare bloc sector 1, primaria sector 1 administrator bloc" />
+  <meta name="geo.region" content="RO" />
+  <meta name="geo.placename" content="Sector 1, Bucuresti, Romania" />
+  <meta name="geo.position" content="44.4268;26.1025" />
+  <meta name="ICBM" content="44.4268, 26.1025" />
+  <meta name="language" content="Romanian" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <link rel="canonical" href="https://www.mpgroupsrl.ro/sector-1.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.mpgroupsrl.ro/sector-1.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.mpgroupsrl.ro/sector-1.html" />
+
+  <!-- Preconnect pentru performanta (afecteaza ranking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei" />
+  <meta property="og:description" content="Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992." />
+  <meta property="og:url" content="https://www.mpgroupsrl.ro/sector-1.html" />
+  <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei" />
+  <meta name="twitter:description" content="Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992." />
+  <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta name="twitter:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei",
+  "description": "Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992.",
+  "url": "https://www.mpgroupsrl.ro/sector-1.html",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MP Group SRL",
+    "@id": "https://www.mpgroupsrl.ro/#organization",
+    "url": "https://www.mpgroupsrl.ro",
+    "telephone": ["+40213320392", "+40744652156"],
+    "email": "contact@mpgroup.com.ro",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bucuresti",
+      "addressCountry": "RO"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bucuresti"
+  },
+  "serviceType": "Administrare blocuri si imobile"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasa",
+      "item": "https://www.mpgroupsrl.ro/"
+    },    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Zone",
+      "item": "https://www.mpgroupsrl.ro/sector-1.html"
+    },    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sector 1 Bucuresti"
+      
+    }
+  ]
+}
+  </script>
+  <!-- ===== END SEO ===== -->
 </head>
 <body>
 
@@ -152,7 +342,7 @@
         </li>
         <li><a href="legislatie.html">Legislatie</a></li>
         <li><a href="sesizari.html">Sesizari</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#formular">Contact</a></li>
       </ul>
       <div class="nav-right">
         <div class="nav-phone"><a href="tel:+40723371537">0723 371 537</a></div>
@@ -295,7 +485,7 @@
           <ul>
             <li><a href="legislatie.html">Legislatie</a></li>
             <li><a href="sesizari.html">Sesizari</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#formular">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -304,6 +494,81 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="administrare-financiara.html">Administrare financiara</a>
+          <a href="incasare-cote.html">Incasare cote intretinere</a>
+          <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="administrare-tehnica.html">Administrare tehnica</a>
+          <a href="cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="sector-1.html">Sector 1</a>
+          <a href="sector-2.html">Sector 2</a>
+          <a href="sector-3.html">Sector 3</a>
+          <a href="sector-4.html">Sector 4</a>
+          <a href="sector-5.html">Sector 5</a>
+          <a href="sector-6.html">Sector 6</a>
+          <a href="voluntari.html">Voluntari</a>
+          <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="legislatie.html">Legislatie</a>
+        <a href="sesizari.html">Sesizari</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var hamburger = document.querySelector(".hamburger");
+      var menu = document.getElementById("mobileMenu");
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle("open");
+        hamburger.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("open") ? "hidden" : "";
+      });
+      menu.addEventListener("click", function(e) {
+        if (e.target === menu) {
+          menu.classList.remove("open");
+          hamburger.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById("mobileMenu");
+      var hamburger = document.querySelector(".hamburger");
+      if (!menu || !hamburger) return;
+      menu.classList.toggle("open");
+      hamburger.classList.toggle("active");
+      document.body.style.overflow = menu.classList.contains("open") ? "hidden" : "";
+    }
+  </script>
 
 </body>
 </html>

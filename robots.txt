@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Blocheaza paginile care nu trebuie indexate
+Disallow: /termeni.html
+Disallow: /confidentialitate.html
+Disallow: /cookies.html
+
+# Sitemap
+Sitemap: https://www.mpgroupsrl.ro/sitemap.xml
+
+# Crawl delay (optional - pentru servere mai slabe)
+Crawl-delay: 1

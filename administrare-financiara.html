@@ -2,11 +2,11 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administrare Blocuri Financiara – MP Group Bucuresti</title>
-  <meta name="description" content="Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti si Ilfov. Evidente contabile, liste intretinere, incasari, plati furnizori. MP Group." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Administrare Financiara Bloc Bucuresti | MP Group – Liste Intretinere, Contabilitate</title>
+  <meta name="description" content="Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti. Liste intretinere, evidenta contabila, registre obligatorii, plata furnizori. Administrator atestat MP Group." />
 
-  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
@@ -30,7 +30,9 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body {
+      overflow-x: hidden;
+      max-width: 100%; font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
 
     /* ===== TOP BAR ===== */
@@ -43,7 +45,7 @@
 
     /* ===== NAVBAR ===== */
     nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 70px; gap: 32px; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
     .logo { display: flex; align-items: center; }
     .logo img { height: 48px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
@@ -134,7 +136,7 @@
     .footer-inner { max-width: 1600px; margin: 0 auto; }
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #222; }
     .footer-brand .logo { display: block; margin-bottom: 12px; }
-    .footer-brand .logo img { filter: brightness(0) invert(1); height: 52px; }
+    .footer-brand .logo img {  height: 52px; }
     .footer-brand p { font-size: 13px; color: #666; line-height: 1.65; max-width: 260px; }
     .footer-col h5 { font-size: 11px; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
     .footer-col ul { list-style: none; }
@@ -156,7 +158,283 @@
       footer { padding: 48px 24px 28px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
+
+    /* ===== MOBILE OPTIMIZAT ===== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--white);
+      z-index: 999;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-menu.open .mobile-menu-panel {
+      transform: translateX(0);
+    }
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--red);
+      background: var(--black);
+    }
+    .mobile-menu-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .mobile-menu-logo span { color: var(--red); }
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-close svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .mobile-menu-links {
+      flex: 1;
+      padding: 12px 0;
+    }
+    .mobile-menu-links a {
+      display: block;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-border);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: var(--red); background: var(--gray-bg); }
+    .mobile-menu-links .mobile-section-title {
+      padding: 10px 20px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--gray-bg);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .mobile-menu-links .mobile-sub a {
+      padding-left: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .mobile-menu-footer {
+      padding: 20px;
+      background: var(--black);
+      border-top: 2px solid var(--red);
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .mobile-menu-footer .mobile-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-menu-footer .mobile-phones a {
+      font-size: 13px;
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+    }
+    .mobile-menu-footer .mobile-phones a:hover { color: var(--white); }
+
+    /* Hamburger activ */
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .hamburger span { transition: all 0.3s; }
+
+    @media (max-width: 768px) {
+      /* Topbar */
+      .topbar-inner { padding: 0 16px; }
+      .topbar-text { display: none; }
+
+      /* Navbar */
+      .nav-inner { padding: 0 16px; height: 60px; }
+      .logo img { height: 40px; }
+      .nav-right { display: none; }
+
+      /* Hero */
+      .hero { padding: 40px 16px 36px !important; }
+      .hero h1 { font-size: 28px !important; }
+      .hero-desc { font-size: 14px !important; }
+      .hero-card { display: none !important; }
+      .hero-inner { grid-template-columns: 1fr !important; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-item:nth-child(2) { border-right: none !important; }
+      .stat-item { padding: 8px 12px !important; }
+      .stat-num { font-size: 26px !important; }
+
+      /* Why grid */
+      .why-grid { grid-template-columns: 1fr !important; }
+      .why-item { border-right: none !important; border-bottom: 1px solid var(--gray-border) !important; }
+      .why-item:last-child { border-bottom: none !important; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr !important; }
+
+      /* Zone */
+      .zone-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Contract */
+      .contract-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Lege */
+      .lege-inner { grid-template-columns: 1fr !important; padding: 40px 16px !important; }
+
+      /* Form */
+      .form-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Footer */
+      footer { padding: 0 !important; }
+      .footer-top { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 16px !important; }
+      .footer-bottom { padding: 16px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+
+      /* Page body */
+      .page-body { grid-template-columns: 1fr !important; padding: 28px 16px !important; gap: 28px !important; }
+      .page-hero { padding: 32px 16px !important; }
+      .page-hero h1 { font-size: 26px !important; }
+      .section { padding: 40px 16px !important; }
+      .section-inner { padding: 0 !important; }
+
+      /* Blog grid */
+      .blog-grid { grid-template-columns: 1fr !important; }
+      .blog-grid-wrap { padding: 32px 16px !important; }
+      .blog-hero { padding: 40px 16px !important; }
+      .blog-hero h1 { font-size: 28px !important; }
+
+      /* Article */
+      .article-body { padding: 28px 16px !important; }
+      .related-articles { padding: 28px 16px !important; }
+      .related-grid { grid-template-columns: 1fr !important; }
+
+      /* Lege grid */
+      .lege-grid { grid-template-columns: 1fr !important; }
+
+      /* Promotii */
+      .section[style*="var(--red)"] .section-inner { flex-direction: column !important; text-align: center !important; }
+
+      /* Sidebar */
+      .sidebar { position: static !important; }
+    }
+
+    @media (max-width: 480px) {
+      .zone-grid { grid-template-columns: 1fr !important; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .hero-tags { gap: 6px !important; }
+      .tag { font-size: 11px !important; padding: 4px 10px !important; }
+      .hero-actions { flex-direction: column !important; }
+      .btn-primary, .btn-secondary { width: 100% !important; text-align: center !important; }
+    }
+
+  
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
   </style>
+  <!-- SEO META TAGS -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="author" content="MP Group SRL" />
+  <meta name="keywords" content="administrare financiara bloc, liste intretinere asociatie proprietari, evidenta contabila asociatie proprietari, contabilitate bloc bucuresti, registru casa asociatie, registru banca asociatie, fond rulment asociatie, fond reparatii asociatie, plata furnizori utilitati bloc, declaratii fiscale asociatie, lista plata intretinere, calcul cote intretinere, repartizare cheltuieli bloc, administrator financiar bloc, contabil asociatie proprietari, partida simpla contabilitate bloc, acces online lista intretinere, transmitere liste email proprietari, evidenta restante bloc, urmarire debite asociatie proprietari, internet banking asociatie, plata online intretinere bloc, administrare contabila bloc bucuresti" />
+  <link rel="canonical" href="https://www.mpgroupsrl.ro/administrare-financiara.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Administrare Financiara Bloc Bucuresti | MP Group – Liste Intretinere, Contabilitate" />
+  <meta property="og:description" content="Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti. Liste intretinere, evidenta contabila, registre obligatorii, plata furnizori. Administrator atestat MP Group." />
+  <meta property="og:url" content="https://www.mpgroupsrl.ro/administrare-financiara.html" />
+  <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="https://www.mpgroupsrl.ro/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Administrare Financiara Bloc Bucuresti | MP Group – Liste Intretinere, Contabilitate" />
+  <meta name="twitter:description" content="Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti. Liste intretinere, evidenta contabila, registre obligatorii, plata furnizori. Administrator atestat MP Group." />
+  <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Administrare Financiara Bloc Bucuresti | MP Group – Liste Intretinere, Contabilitate",
+  "description": "Servicii complete de administrare financiara pentru asociatii de proprietari din Bucuresti. Liste intretinere, evidenta contabila, registre obligatorii, plata furnizori. Administrator atestat MP Group.",
+  "url": "https://www.mpgroupsrl.ro/administrare-financiara.html",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MP Group SRL",
+    "telephone": "+40744652156",
+    "url": "https://www.mpgroupsrl.ro"
+  }
+}
+  </script>
 </head>
 <body>
 
@@ -174,7 +452,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo"><img src="/logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group – Administrare blocuri Bucuresti" /></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#" class="active">Servicii</a>
@@ -215,7 +493,7 @@
   <div class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb">
-        <a href="/">Acasa</a>
+        <a href="index.html">Acasa</a>
         <span class="breadcrumb-sep">/</span>
         <a href="/servicii/">Servicii</a>
         <span class="breadcrumb-sep">/</span>
@@ -372,7 +650,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="/" class="logo"><img src="/logo.png" alt="MP Group" /></a>
+          <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
           <p>Servicii de administrare blocuri si imobile pentru asociatii de proprietari din Bucuresti si Ilfov. Activi din 1992.</p>
         </div>
         <div class="footer-col">
@@ -409,6 +687,81 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="administrare-financiara.html">Administrare financiara</a>
+          <a href="incasare-cote.html">Incasare cote intretinere</a>
+          <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="administrare-tehnica.html">Administrare tehnica</a>
+          <a href="cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="sector-1.html">Sector 1</a>
+          <a href="sector-2.html">Sector 2</a>
+          <a href="sector-3.html">Sector 3</a>
+          <a href="sector-4.html">Sector 4</a>
+          <a href="sector-5.html">Sector 5</a>
+          <a href="sector-6.html">Sector 6</a>
+          <a href="voluntari.html">Voluntari</a>
+          <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="legislatie.html">Legislatie</a>
+        <a href="sesizari.html">Sesizari</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      });
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) {
+          menu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var hamburger = document.querySelector('.hamburger');
+      if (!menu || !hamburger) return;
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
 
 </body>
 </html>

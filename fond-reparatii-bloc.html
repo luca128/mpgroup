@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Fondul de Reparatii al Blocului – Constituire si Utilizare Legala | MP Group</title>
+  <meta name="description" content="Tot ce trebuie sa stie o asociatie despre fondul de reparatii: contributia lunara, aprobarea lucrarilor, separarea conturilor si transparenta." />
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc2222; --red-dark: #a81c1c; --red-light: #fdeaea;
+      --black: #111111; --gray-dark: #333333; --gray-mid: #555555;
+      --gray-light: #888888; --gray-border: #e0e0e0; --gray-bg: #f7f7f7;
+      --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      max-width: 100%; font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
+    .topbar-contact a:hover { text-decoration: underline; }
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 240px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+    .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; max-width: 800px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+    .article-meta span { font-size: 12px; color: #666; }
+    .article-meta .tag { background: var(--red); color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .article-body { max-width: 800px; margin: 0 auto; padding: 60px; }
+    .article-body h2 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--black); margin: 40px 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--red); }
+    .article-body h3 { font-size: 16px; font-weight: 700; color: var(--black); margin: 24px 0 10px; }
+    .article-body p { font-size: 15px; color: var(--gray-mid); line-height: 1.85; margin-bottom: 16px; }
+    .article-body p strong { color: var(--black); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 12px 0 16px 20px; }
+    .article-body li { font-size: 15px; color: var(--gray-mid); line-height: 1.75; margin-bottom: 8px; }
+    .article-body a { color: var(--red); }
+    .article-body a:hover { text-decoration: underline; }
+    .article-cta { background: var(--red-light); border: 1px solid #f5c6c6; border-radius: 6px; padding: 28px 32px; margin: 40px 0; }
+    .article-cta p { font-size: 15px; color: var(--gray-dark); margin-bottom: 14px; line-height: 1.7; }
+    .article-cta a { display: inline-block; background: var(--red); color: #fff; font-size: 13px; font-weight: 600; padding: 11px 24px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .related-articles { background: var(--gray-bg); padding: 48px 60px; margin-top: 0; }
+    .related-inner { max-width: 1600px; margin: 0 auto; }
+    .related-title { font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .related-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 4px; padding: 20px; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--red); }
+    .related-card .cat { font-size: 10px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .related-card h4 { font-size: 14px; font-weight: 600; color: var(--black); line-height: 1.4; margin-bottom: 10px; }
+    .related-card a.read { font-size: 12px; color: var(--red); font-weight: 600; }
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .article-body { padding: 36px 24px; }
+      .related-articles { padding: 36px 24px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+    }
+
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
+  
+    /* MOBILE MENU CSS */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 300px;
+      height: 100%;
+      background: #ffffff;
+      z-index: 999;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+    .mobile-menu-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-bottom: 2px solid #cc2222;
+      background: #111111; flex-shrink: 0;
+    }
+    .mobile-menu-logo { font-size: 18px; font-weight: 700; color: #fff; }
+    .mobile-menu-logo span { color: #cc2222; }
+    .mobile-menu-close {
+      background: none; border: none; cursor: pointer;
+      padding: 4px; display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-menu-close svg { width: 22px; height: 22px; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .mobile-menu-links { flex: 1; padding: 0; overflow-y: auto; }
+    .mobile-menu-links a {
+      display: block; padding: 14px 20px; font-size: 14px; font-weight: 600;
+      color: #111111; border-bottom: 1px solid #e0e0e0; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: #cc2222; background: #f7f7f7; }
+    .mobile-section-title {
+      padding: 10px 20px 8px; font-size: 10px; font-weight: 700;
+      color: #cc2222; text-transform: uppercase; letter-spacing: 0.1em;
+      background: #f7f7f7; border-bottom: 1px solid #e0e0e0;
+    }
+    .mobile-sub a {
+      padding-left: 32px !important; font-size: 13px !important;
+      font-weight: 500 !important; text-transform: none !important; letter-spacing: 0 !important;
+    }
+    .mobile-menu-footer {
+      padding: 20px; background: #111111;
+      border-top: 2px solid #cc2222; flex-shrink: 0;
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block; background: #cc2222; color: #fff !important;
+      text-align: center; padding: 13px; border-radius: 3px;
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; text-decoration: none; margin-bottom: 12px;
+    }
+    .mobile-phones { display: flex; flex-direction: column; gap: 6px; }
+    .mobile-phones a { font-size: 13px; color: #aaa !important; text-decoration: none !important; text-align: center; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; margin-left: auto; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #111; border-radius: 2px; transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
+
+  </style>
+
+  <!-- ===== SEO MAXIM MP GROUP SRL ===== -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="author" content="MP Group SRL" />
+  <meta name="copyright" content="MP Group SRL" />
+  <meta name="keywords" content="fond reparatii bloc, constituire fond reparatii, utilizare fond reparatii, contributie fond reparatii, aprobare lucrari fond reparatii, cont separat fond reparatii, lege 196 2018 fond reparatii, predare fond reparatii administrator nou, sold fond reparatii" />
+  <meta name="geo.region" content="RO" />
+  <meta name="geo.placename" content="Bucuresti, Romania" />
+  <meta name="geo.position" content="44.4268;26.1025" />
+  <meta name="ICBM" content="44.4268, 26.1025" />
+  <meta name="language" content="Romanian" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <link rel="canonical" href="https://www.mpgroupsrl.ro/fond-reparatii-bloc.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.mpgroupsrl.ro/fond-reparatii-bloc.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.mpgroupsrl.ro/fond-reparatii-bloc.html" />
+
+  <!-- Preconnect pentru performanta (afecteaza ranking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Fondul de Reparatii al Blocului – Constituire si Utilizare Legala | MP Group" />
+  <meta property="og:description" content="Tot ce trebuie sa stie o asociatie despre fondul de reparatii: contributia lunara, aprobarea lucrarilor, separarea conturilor si transparenta." />
+  <meta property="og:url" content="https://www.mpgroupsrl.ro/fond-reparatii-bloc.html" />
+  <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fondul de Reparatii al Blocului – Constituire si Utilizare Legala | MP Group" />
+  <meta name="twitter:description" content="Tot ce trebuie sa stie o asociatie despre fondul de reparatii: contributia lunara, aprobarea lucrarilor, separarea conturilor si transparenta." />
+  <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta name="twitter:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fondul de Reparatii al Blocului – Constituire si Utilizare Legala | MP Group",
+  "description": "Tot ce trebuie sa stie o asociatie despre fondul de reparatii: contributia lunara, aprobarea lucrarilor, separarea conturilor si transparenta.",
+  "url": "https://www.mpgroupsrl.ro/fond-reparatii-bloc.html",
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "author": {"@type": "Organization", "name": "MP Group SRL"},
+  "publisher": {"@type": "Organization", "name": "MP Group SRL", "logo": {"@type": "ImageObject", "url": "https://www.mpgroupsrl.ro/logo.png"}}
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasa",
+      "item": "https://www.mpgroupsrl.ro/"
+    },    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.mpgroupsrl.ro/blog.html"
+    },    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Fondul de Reparatii Bloc"
+      
+    }
+  ]
+}
+  </script>
+  <!-- ===== END SEO ===== -->
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">021 332 0392</a>
+        <a href="tel:+40744652156">0744 652 156</a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+            <a href="cenzorat.html">Cenzorat asociatii</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+        <li><a href="sesizari.html">Sesizari</a></li>
+        <li><a href="../index.html#formular">Contact</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40744652156">0744 652 156</a></div>
+        <a href="index.html#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="blog.html">Blog</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Fondul de reparatii al blocului — cum se constitui...</span>
+      </div>
+      <h1>Fondul de reparatii al blocului — cum se constituie si cum se foloseste legal</h1>
+      <div class="article-meta">
+        <span class="tag">Blog</span>
+        <span>1 iunie 2026</span>
+        <span>MP Group</span>
+      </div>
+    </div>
+  </div>
+  <div class="article-body">
+
+    <p>Fondul de reparatii este unul dintre cele mai importante instrumente financiare ale unei asociatii de proprietari. Constituit corect si gestionat transparent, el permite finantarea lucrarilor necesare fara sa puna presiune brusca pe proprietari. Neglijat, poate lasa blocul fara resurse in momentul in care apar probleme serioase.</p>
+
+    <h2>Ce este fondul de reparatii</h2>
+    <p>Fondul de reparatii este un fond special al asociatiei de proprietari, constituit prin contributii lunare ale tuturor proprietarilor, destinat exclusiv finantarii lucrarilor de intretinere, reparatii si modernizare a partilor comune ale imobilului.</p>
+    <p>Spre deosebire de cotele de intretinere curente, fondul de reparatii se acumuleaza in timp si este folosit pentru cheltuieli mai mari sau neprevazute: inlocuirea acoperisului, repararea fatadei, modernizarea liftului, refacerea instalatiilor comune.</p>
+
+    <h2>Cum se stabileste nivelul contributiei</h2>
+    <p>Nivelul contributiei lunare la fondul de reparatii este stabilit prin <strong>hotararea adunarii generale</strong>. Nu exista o suma fixa impusa de lege — asociatia decide in functie de starea imobilului, lucrarile anticipate si capacitatea financiara a proprietarilor.</p>
+    <p>O practica uzuala este repartizarea contributiei <strong>proportional cu cota de proprietate</strong> (suprafata apartamentului). Proprietarii cu apartamente mai mari contribuie mai mult, deoarece beneficiaza proportional mai mult de partile comune.</p>
+
+    <h2>Cum se aproba utilizarea fondului</h2>
+    <p>Orice cheltuiala din fondul de reparatii trebuie aprobata de <strong>adunarea generala</strong> sau, pentru lucrari urgente de valoare mica, de comitetul executiv in limitele stabilite prin statut. Procesul tipic este:</p>
+    <ol>
+      <li>Identificarea necesarului de lucrari de catre administrator sau comitet</li>
+      <li>Obtinerea a cel putin doua-trei oferte de la firme autorizate</li>
+      <li>Prezentarea ofertelor in adunarea generala sau comitet</li>
+      <li>Aprobarea prin vot si semnarea contractului cu executantul ales</li>
+      <li>Supravegherea lucrarilor si receptia finala</li>
+      <li>Plata din fondul de reparatii pe baza facturii si procesului verbal de receptie</li>
+    </ol>
+
+    <h2>Separarea fondurilor — obligatie legala</h2>
+    <p>Legea 196/2018 obliga asociatia sa tina <strong>conturi bancare separate</strong> pentru fondul de rulment si fondul de reparatii. Acestea nu pot fi amestecate cu contul curent al asociatiei. Aceasta separare protejeaza proprietarii si asigura ca banii destinati reparatiilor nu sunt folositi pentru cheltuieli curente.</p>
+
+    <h2>Ce se intampla cu fondul la schimbarea administratorului</h2>
+    <p>La schimbarea administratorului sau a comitetului, toate fondurile trebuie predate noii conduceri pe baza unui <strong>proces verbal de predare-primire</strong>, insotit de extrasele de cont bancar aferente. Orice discrepanta trebuie semnalata imediat si investigata.</p>
+
+    <h2>Transparenta fondului de reparatii</h2>
+    <p>Proprietarii au dreptul sa cunoasca in orice moment soldul fondului de reparatii, intrarile si iesirile din cont si destinatia fiecarei sume cheltuite. Un administrator serios pune aceste informatii la dispozitie lunar, fie prin lista de intretinere, fie printr-o platforma online dedicata.</p>
+
+    <div class="article-cta">
+      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
+      <a href="index.html#formular">Solicita oferta gratuita</a>
+    </div>
+  </div>
+  <div class="related-articles">
+    <div class="related-inner">
+      <div class="related-title">Articole similare</div>
+      <div class="related-grid">
+        <a href="administrator-bloc-bucuresti.html" class="related-card" style="text-decoration:none;">
+          <div class="cat">Blog</div>
+          <h4>Cum alegi un administrator de bloc in Bucuresti — ce sa verifici inainte sa semnezi contractul</h4>
+          <span class="read">Citeste articolul &rarr;</span>
+        </a>
+        <a href="drepturi-obligatii-asociatie-proprietari.html" class="related-card" style="text-decoration:none;">
+          <div class="cat">Blog</div>
+          <h4>Drepturile si obligatiile asociatiei de proprietari — ce trebuie sa stie fiecare locatar</h4>
+          <span class="read">Citeste articolul &rarr;</span>
+        </a>
+        <a href="restante-intretinere-lege.html" class="related-card" style="text-decoration:none;">
+          <div class="cat">Blog</div>
+          <h4>Restante la intretinere — ce poate face asociatia conform Legii 196/2018</h4>
+          <span class="read">Citeste articolul &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer style="background:#111;padding:0;margin-top:0;">
+    <div style="max-width:1600px;margin:0 auto;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px;color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti</span>
+      <div style="display:flex;gap:20px;">
+        <a href="termeni.html" style="font-size:11px;color:#333;text-decoration:none;">Termeni</a>
+        <a href="confidentialitate.html" style="font-size:11px;color:#333;text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px;color:#333;text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </footer>
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="../administrare-financiara.html">Administrare financiara</a>
+          <a href="../incasare-cote.html">Incasare cote intretinere</a>
+          <a href="../verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="../administrare-tehnica.html">Administrare tehnica</a>
+          <a href="../cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="../sector-1.html">Sector 1</a>
+          <a href="../sector-2.html">Sector 2</a>
+          <a href="../sector-3.html">Sector 3</a>
+          <a href="../sector-4.html">Sector 4</a>
+          <a href="../sector-5.html">Sector 5</a>
+          <a href="../sector-6.html">Sector 6</a>
+          <a href="../voluntari.html">Voluntari</a>
+          <a href="../popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="../ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="../legislatie.html">Legislatie</a>
+        <a href="../sesizari.html">Sesizari</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="../index.html#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      });
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) {
+          menu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var hamburger = document.querySelector('.hamburger');
+      if (!menu || !hamburger) return;
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+
+</body>
+</html>

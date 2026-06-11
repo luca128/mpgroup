@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Sesizari Asociatii de Proprietari Bucuresti | Contact Rapid | MP Group SRL</title>
+  <meta name="description" content="Adresati sesizari, reclamatii sau sugestii catre MP Group SRL. Raspundem prompt la orice problema legata de administrarea blocului dumneavoastra. Telefon, WhatsApp, email." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc2222; --red-dark: #a81c1c; --red-light: #fdeaea;
+      --black: #111111; --gray-dark: #333333; --gray-mid: #555555;
+      --gray-light: #888888; --gray-border: #e0e0e0; --gray-bg: #f7f7f7;
+      --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      max-width: 100%; font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
+    .topbar-contact a:hover { text-decoration: underline; }
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 240px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+    .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero-desc { font-size: 15px; color: #888; max-width: 620px; line-height: 1.7; }
+    .page-body { max-width: 1600px; margin: 0 auto; padding: 60px; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: start; }
+    .intro-text p { font-size: 15px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 16px; }
+    .intro-text p strong { color: var(--black); font-weight: 600; }
+    .contact-methods { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
+    .contact-method { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 4px; }
+    .contact-method svg { width: 18px; height: 18px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .contact-method-body strong { display: block; font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
+    .contact-method-body a { font-size: 14px; color: var(--red); font-weight: 600; }
+    .contact-method-body a:hover { text-decoration: underline; }
+    .form-box { background: var(--white); border: 1px solid var(--gray-border); border-radius: 4px; padding: 32px; }
+    .form-box h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .form-box p { font-size: 13px; color: var(--gray-mid); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-border); line-height: 1.6; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 10px 14px; font-size: 14px; font-family: var(--font-body); color: var(--black); background: var(--white); border: 1px solid var(--gray-border); border-radius: 3px; outline: none; transition: border-color 0.2s; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--red); }
+    .form-row textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; background: var(--red); color: var(--white); font-size: 14px; font-weight: 600; padding: 13px; border: none; border-radius: 3px; cursor: pointer; letter-spacing: 0.03em; margin-top: 4px; transition: background 0.2s; }
+    .form-submit:hover { background: var(--red-dark); }
+    footer { background: #111; padding: 0; margin-top: 80px; }
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .page-body { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+    }
+
+    /* ===== MOBILE OPTIMIZAT ===== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--white);
+      z-index: 999;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-menu.open .mobile-menu-panel {
+      transform: translateX(0);
+    }
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--red);
+      background: var(--black);
+    }
+    .mobile-menu-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .mobile-menu-logo span { color: var(--red); }
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-close svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .mobile-menu-links {
+      flex: 1;
+      padding: 12px 0;
+    }
+    .mobile-menu-links a {
+      display: block;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-border);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: var(--red); background: var(--gray-bg); }
+    .mobile-menu-links .mobile-section-title {
+      padding: 10px 20px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--gray-bg);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .mobile-menu-links .mobile-sub a {
+      padding-left: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .mobile-menu-footer {
+      padding: 20px;
+      background: var(--black);
+      border-top: 2px solid var(--red);
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .mobile-menu-footer .mobile-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-menu-footer .mobile-phones a {
+      font-size: 13px;
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+    }
+    .mobile-menu-footer .mobile-phones a:hover { color: var(--white); }
+
+    /* Hamburger activ */
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .hamburger span { transition: all 0.3s; }
+
+    @media (max-width: 768px) {
+      /* Topbar */
+      .topbar-inner { padding: 0 16px; }
+      .topbar-text { display: none; }
+
+      /* Navbar */
+      .nav-inner { padding: 0 16px; height: 60px; }
+      .logo img { height: 40px; }
+      .nav-right { display: none; }
+
+      /* Hero */
+      .hero { padding: 40px 16px 36px !important; }
+      .hero h1 { font-size: 28px !important; }
+      .hero-desc { font-size: 14px !important; }
+      .hero-card { display: none !important; }
+      .hero-inner { grid-template-columns: 1fr !important; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-item:nth-child(2) { border-right: none !important; }
+      .stat-item { padding: 8px 12px !important; }
+      .stat-num { font-size: 26px !important; }
+
+      /* Why grid */
+      .why-grid { grid-template-columns: 1fr !important; }
+      .why-item { border-right: none !important; border-bottom: 1px solid var(--gray-border) !important; }
+      .why-item:last-child { border-bottom: none !important; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr !important; }
+
+      /* Zone */
+      .zone-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Contract */
+      .contract-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Lege */
+      .lege-inner { grid-template-columns: 1fr !important; padding: 40px 16px !important; }
+
+      /* Form */
+      .form-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Footer */
+      footer { padding: 0 !important; }
+      .footer-top { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 16px !important; }
+      .footer-bottom { padding: 16px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+
+      /* Page body */
+      .page-body { grid-template-columns: 1fr !important; padding: 28px 16px !important; gap: 28px !important; }
+      .page-hero { padding: 32px 16px !important; }
+      .page-hero h1 { font-size: 26px !important; }
+      .section { padding: 40px 16px !important; }
+      .section-inner { padding: 0 !important; }
+
+      /* Blog grid */
+      .blog-grid { grid-template-columns: 1fr !important; }
+      .blog-grid-wrap { padding: 32px 16px !important; }
+      .blog-hero { padding: 40px 16px !important; }
+      .blog-hero h1 { font-size: 28px !important; }
+
+      /* Article */
+      .article-body { padding: 28px 16px !important; }
+      .related-articles { padding: 28px 16px !important; }
+      .related-grid { grid-template-columns: 1fr !important; }
+
+      /* Lege grid */
+      .lege-grid { grid-template-columns: 1fr !important; }
+
+      /* Promotii */
+      .section[style*="var(--red)"] .section-inner { flex-direction: column !important; text-align: center !important; }
+
+      /* Sidebar */
+      .sidebar { position: static !important; }
+    }
+
+    @media (max-width: 480px) {
+      .zone-grid { grid-template-columns: 1fr !important; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .hero-tags { gap: 6px !important; }
+      .tag { font-size: 11px !important; padding: 4px 10px !important; }
+      .hero-actions { flex-direction: column !important; }
+      .btn-primary, .btn-secondary { width: 100% !important; text-align: center !important; }
+    }
+
+  
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
+  </style>
+
+  <!-- ===== SEO MAXIM MP GROUP SRL ===== -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="author" content="MP Group SRL" />
+  <meta name="copyright" content="MP Group SRL" />
+  <meta name="keywords" content="sesizari asociatie proprietari, reclamatii administrator bloc, sesizare administrare bloc bucuresti, contact administrator bloc, problema administrator bloc, sesizare avarie bloc, contact mp group srl, telefon administrare bloc bucuresti, email administrare bloc, formular sesizare bloc, sesizare online asociatie proprietari" />
+  <meta name="geo.region" content="RO" />
+  <meta name="geo.placename" content="Bucuresti, Romania" />
+  <meta name="geo.position" content="44.4268;26.1025" />
+  <meta name="ICBM" content="44.4268, 26.1025" />
+  <meta name="language" content="Romanian" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <link rel="canonical" href="https://www.mpgroupsrl.ro/sesizari.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.mpgroupsrl.ro/sesizari.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.mpgroupsrl.ro/sesizari.html" />
+
+  <!-- Preconnect pentru performanta (afecteaza ranking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sesizari Asociatii de Proprietari Bucuresti | Contact Rapid | MP Group SRL" />
+  <meta property="og:description" content="Adresati sesizari, reclamatii sau sugestii catre MP Group SRL. Raspundem prompt la orice problema legata de administrarea blocului dumneavoastra. Telefon, WhatsApp, email." />
+  <meta property="og:url" content="https://www.mpgroupsrl.ro/sesizari.html" />
+  <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sesizari Asociatii de Proprietari Bucuresti | Contact Rapid | MP Group SRL" />
+  <meta name="twitter:description" content="Adresati sesizari, reclamatii sau sugestii catre MP Group SRL. Raspundem prompt la orice problema legata de administrarea blocului dumneavoastra. Telefon, WhatsApp, email." />
+  <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
+  <meta name="twitter:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Sesizari Asociatii de Proprietari Bucuresti | Contact Rapid | MP Group SRL",
+  "url": "https://www.mpgroupsrl.ro/sesizari.html",
+  "description": "Adresati sesizari, reclamatii sau sugestii catre MP Group SRL. Raspundem prompt la orice problema legata de administrarea blocului dumneavoastra. Telefon, WhatsApp, email."
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasa",
+      "item": "https://www.mpgroupsrl.ro/"
+    },    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sesizari"
+      
+    }
+  ]
+}
+  </script>
+  <!-- ===== END SEO ===== -->
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">021 332 0392</a>
+        <a href="tel:+40744652156">0744 652 156</a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+            <a href="cenzorat.html">Cenzorat asociatii</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html">Legislatie</a></li>
+        <li><a href="sesizari.html" class="active">Sesizari</a></li>
+        <li><a href="index.html#formular">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40744652156">0744 652 156</a></div>
+        <a href="index.html#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Sesizari</span>
+      </div>
+      <h1>Sesizari asociatii de <em>proprietari</em></h1>
+      <p class="page-hero-desc">Aici puteti adresa sesizari sau sugestii, atat clientii nostri cat si orice alta persoana. Vom face tot posibilul sa rezolvam problemele semnalate cat mai rapid.</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div>
+      <div class="intro-text">
+        <p>Sesizarile pot veni din partea <strong>proprietarilor din blocurile administrate de MP Group</strong>, din partea <strong>comitetelor executive</strong> sau din partea <strong>oricarei persoane</strong> care intampina o problema legata de serviciile noastre.</p>
+        <p>Ne angajam sa raspundem la fiecare sesizare in cel mai scurt timp posibil. Problemele care tin de noi le rezolvam direct. Pe cele care implica alte institutii le semnalam autoritatilor competente si va informam despre demersurile facute.</p>
+        <p>Puteti folosi formularul alaturat sau ne puteti contacta direct prin telefon, WhatsApp sau email.</p>
+      </div>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          <div class="contact-method-body">
+            <strong>Telefon fix</strong>
+            <a href="tel:+40213320392">021 332 0392</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          <div class="contact-method-body">
+            <strong>Mobil / WhatsApp</strong>
+            <a href="tel:+40744652156">0744 652 156</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="contact-method-body">
+            <strong>Email</strong>
+            <a href="mailto:info@mpgroupsrl.ro">info@mpgroupsrl.ro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h3>Trimite o sesizare</h3>
+      <p>Vom incerca sa va raspundem in cel mai scurt timp posibil. Va multumim!</p>
+      <form id="sesizare-form" onsubmit="trimiteFormularSesizare(event)">
+        <div class="form-row">
+          <label for="nume">Nume si prenume *</label>
+          <input type="text" id="nume" name="nume" required placeholder="ex. Ion Popescu" />
+        </div>
+        <div class="form-row">
+          <label for="tel">Telefon *</label>
+          <input type="tel" id="tel" name="tel" required placeholder="07xx xxx xxx" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="adresa@email.ro" />
+        </div>
+        <div class="form-row">
+          <label for="adresa">Adresa imobil</label>
+          <input type="text" id="adresa" name="adresa" placeholder="Strada, nr., sector" />
+        </div>
+        <div class="form-row">
+          <label for="subiect">Subiect *</label>
+          <input type="text" id="subiect" name="subiect" required placeholder="Subiectul sesizarii" />
+        </div>
+        <div class="form-row">
+          <label for="mesaj">Mesaj *</label>
+          <textarea id="mesaj" name="mesaj" required placeholder="Descrieti problema sau sugestia dumneavoastra..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Trimite sesizarea</button>
+      </form>
+    </div>
+  </div>
+
+  <footer style="background:#111;padding:0;margin-top:0;">
+    <div style="max-width:1600px;margin:0 auto;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px;color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti</span>
+      <div style="display:flex;gap:20px;">
+        <a href="termeni.html" style="font-size:11px;color:#333;text-decoration:none;">Termeni</a>
+        <a href="confidentialitate.html" style="font-size:11px;color:#333;text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px;color:#333;text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="administrare-financiara.html">Administrare financiara</a>
+          <a href="incasare-cote.html">Incasare cote intretinere</a>
+          <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="administrare-tehnica.html">Administrare tehnica</a>
+          <a href="cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="sector-1.html">Sector 1</a>
+          <a href="sector-2.html">Sector 2</a>
+          <a href="sector-3.html">Sector 3</a>
+          <a href="sector-4.html">Sector 4</a>
+          <a href="sector-5.html">Sector 5</a>
+          <a href="sector-6.html">Sector 6</a>
+          <a href="voluntari.html">Voluntari</a>
+          <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="legislatie.html">Legislatie</a>
+        <a href="sesizari.html">Sesizari</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      });
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) {
+          menu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var hamburger = document.querySelector('.hamburger');
+      if (!menu || !hamburger) return;
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+
+  <script>
+    function trimiteFormularSesizare(e) {
+      e.preventDefault();
+      var nume = document.getElementById('nume').value;
+      var tel = document.getElementById('tel').value;
+      var email = document.getElementById('email').value;
+      var adresa = document.getElementById('adresa').value;
+      var subiect = document.getElementById('subiect').value;
+      var mesaj = document.getElementById('mesaj').value;
+
+      var subject = encodeURIComponent('Sesizare: ' + subiect + ' – ' + nume);
+      var body = encodeURIComponent(
+        'Sesizare primita prin site\n' +
+        '=====================================\n\n' +
+        'Nume si prenume: ' + nume + '\n' +
+        'Telefon: ' + tel + '\n' +
+        'Email: ' + email + '\n' +
+        'Adresa imobil: ' + (adresa || '–') + '\n' +
+        'Subiect: ' + subiect + '\n\n' +
+        'Mesaj:\n' + mesaj + '\n\n' +
+        '=====================================\n' +
+        'Sesizare trimisa prin formularul de pe mpgroupsrl.ro'
+      );
+
+      window.location.href = 'mailto:info@mpgroupsrl.ro?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>

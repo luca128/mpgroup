@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Legislatie Asociatii de Proprietari – MP Group Bucuresti</title>
+  <meta name="description" content="Legislatia in vigoare pentru asociatii de proprietari: Legea 196/2018, Legea 230/2007, HG 1588/2007. MP Group administrare blocuri Bucuresti." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc2222; --red-dark: #a81c1c; --red-light: #fdeaea;
+      --black: #111111; --gray-dark: #333333; --gray-mid: #555555;
+      --gray-light: #888888; --gray-border: #e0e0e0; --gray-bg: #f7f7f7;
+      --white: #ffffff; --font-body: 'Nunito', sans-serif; --font-display: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      max-width: 100%; font-family: var(--font-body); color: var(--black); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    .topbar { background: var(--red); padding: 8px 0; }
+    .topbar-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-contact { display: flex; align-items: center; gap: 20px; }
+    .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
+    .topbar-contact a:hover { text-decoration: underline; }
+    nav { background: var(--white); border-bottom: 2.5px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1600px; margin: 0 auto; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .has-dropdown { position: relative; }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 240px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone a { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.2s; }
+    .nav-phone a:hover { color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 20px; font-size: 13px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; border-radius: 3px; display: inline-block; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+    .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: 1600px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
+    .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero-desc { font-size: 15px; color: #888; max-width: 620px; line-height: 1.7; }
+    .page-body { max-width: 1600px; margin: 0 auto; padding: 60px; }
+    .lege-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
+    .lege-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 4px; padding: 32px; border-top: 3px solid var(--red); transition: box-shadow 0.2s; }
+    .lege-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .lege-num { font-family: var(--font-display); font-size: 48px; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 12px; }
+    .lege-name { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 10px; }
+    .lege-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 16px; }
+    .lege-badge { display: inline-block; background: var(--red-light); color: var(--red); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+    .section-title-red { font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 24px; }
+    .info-block { margin-bottom: 40px; }
+    .info-block p { font-size: 14px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 12px; }
+    .info-block p:last-child { margin-bottom: 0; }
+    .info-block strong { color: var(--black); font-weight: 600; }
+    .cta-box { background: var(--red-light); border: 1px solid #f5c6c6; border-radius: 6px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 48px; }
+    .cta-box p { font-size: 15px; color: var(--gray-dark); max-width: 580px; line-height: 1.65; }
+    .cta-box a { display: inline-block; background: var(--red); color: #fff; font-size: 13px; font-weight: 600; padding: 11px 24px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+    footer { background: #111; padding: 0; margin-top: 80px; }
+    @media (max-width: 960px) {
+      .topbar-inner, .nav-inner { padding: 0 24px; }
+      .page-hero { padding: 40px 24px; }
+      .page-body { padding: 36px 24px; }
+      .lege-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-text { display: none; }
+      .cta-box { flex-direction: column; }
+    }
+
+    /* ===== MOBILE OPTIMIZAT ===== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--white);
+      z-index: 999;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-menu.open .mobile-menu-panel {
+      transform: translateX(0);
+    }
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--red);
+      background: var(--black);
+    }
+    .mobile-menu-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .mobile-menu-logo span { color: var(--red); }
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-close svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .mobile-menu-links {
+      flex: 1;
+      padding: 12px 0;
+    }
+    .mobile-menu-links a {
+      display: block;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-border);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mobile-menu-links a:hover { color: var(--red); background: var(--gray-bg); }
+    .mobile-menu-links .mobile-section-title {
+      padding: 10px 20px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--gray-bg);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .mobile-menu-links .mobile-sub a {
+      padding-left: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .mobile-menu-footer {
+      padding: 20px;
+      background: var(--black);
+      border-top: 2px solid var(--red);
+    }
+    .mobile-menu-footer a.mobile-cta {
+      display: block;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .mobile-menu-footer .mobile-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-menu-footer .mobile-phones a {
+      font-size: 13px;
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+    }
+    .mobile-menu-footer .mobile-phones a:hover { color: var(--white); }
+
+    /* Hamburger activ */
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .hamburger span { transition: all 0.3s; }
+
+    @media (max-width: 768px) {
+      /* Topbar */
+      .topbar-inner { padding: 0 16px; }
+      .topbar-text { display: none; }
+
+      /* Navbar */
+      .nav-inner { padding: 0 16px; height: 60px; }
+      .logo img { height: 40px; }
+      .nav-right { display: none; }
+
+      /* Hero */
+      .hero { padding: 40px 16px 36px !important; }
+      .hero h1 { font-size: 28px !important; }
+      .hero-desc { font-size: 14px !important; }
+      .hero-card { display: none !important; }
+      .hero-inner { grid-template-columns: 1fr !important; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-item:nth-child(2) { border-right: none !important; }
+      .stat-item { padding: 8px 12px !important; }
+      .stat-num { font-size: 26px !important; }
+
+      /* Why grid */
+      .why-grid { grid-template-columns: 1fr !important; }
+      .why-item { border-right: none !important; border-bottom: 1px solid var(--gray-border) !important; }
+      .why-item:last-child { border-bottom: none !important; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr !important; }
+
+      /* Zone */
+      .zone-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Contract */
+      .contract-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Lege */
+      .lege-inner { grid-template-columns: 1fr !important; padding: 40px 16px !important; }
+
+      /* Form */
+      .form-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+      /* Footer */
+      footer { padding: 0 !important; }
+      .footer-top { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 16px !important; }
+      .footer-bottom { padding: 16px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+
+      /* Page body */
+      .page-body { grid-template-columns: 1fr !important; padding: 28px 16px !important; gap: 28px !important; }
+      .page-hero { padding: 32px 16px !important; }
+      .page-hero h1 { font-size: 26px !important; }
+      .section { padding: 40px 16px !important; }
+      .section-inner { padding: 0 !important; }
+
+      /* Blog grid */
+      .blog-grid { grid-template-columns: 1fr !important; }
+      .blog-grid-wrap { padding: 32px 16px !important; }
+      .blog-hero { padding: 40px 16px !important; }
+      .blog-hero h1 { font-size: 28px !important; }
+
+      /* Article */
+      .article-body { padding: 28px 16px !important; }
+      .related-articles { padding: 28px 16px !important; }
+      .related-grid { grid-template-columns: 1fr !important; }
+
+      /* Lege grid */
+      .lege-grid { grid-template-columns: 1fr !important; }
+
+      /* Promotii */
+      .section[style*="var(--red)"] .section-inner { flex-direction: column !important; text-align: center !important; }
+
+      /* Sidebar */
+      .sidebar { position: static !important; }
+    }
+
+    @media (max-width: 480px) {
+      .zone-grid { grid-template-columns: 1fr !important; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .hero-tags { gap: 6px !important; }
+      .tag { font-size: 11px !important; padding: 4px 10px !important; }
+      .hero-actions { flex-direction: column !important; }
+      .btn-primary, .btn-secondary { width: 100% !important; text-align: center !important; }
+    }
+
+  
+    /* NAVBAR MOBILE FIX */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr auto !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
+
+  
+    /* HAMBURGER DREAPTA */
+    .nav-inner { position: relative; }
+    .hamburger { margin-left: auto; }
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-right { display: none !important; }
+      .hamburger { display: flex !important; margin-left: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
+      <div class="topbar-contact">
+        <a href="tel:+40213320392">021 332 0392</a>
+        <a href="tel:+40744652156">0744 652 156</a>
+        <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MP Group" /></a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
+          <div class="dropdown">
+            <a href="administrare-financiara.html">Administrare financiara</a>
+            <a href="incasare-cote.html">Incasare cote intretinere</a>
+            <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+            <a href="administrare-tehnica.html">Administrare tehnica</a>
+            <a href="cenzorat.html">Cenzorat asociatii</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
+          <div class="dropdown">
+            <a href="sector-1.html">Sector 1</a>
+            <a href="sector-2.html">Sector 2</a>
+            <a href="sector-3.html">Sector 3</a>
+            <a href="sector-4.html">Sector 4</a>
+            <a href="sector-5.html">Sector 5</a>
+            <a href="sector-6.html">Sector 6</a>
+            <a href="voluntari.html">Voluntari</a>
+            <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
+          </div>
+        </li>
+        <li><a href="legislatie.html" class="active">Legislatie</a></li>
+        <li><a href="sesizari.html">Sesizari</a></li>
+        <li><a href="index.html#formular">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-phone"><a href="tel:+40744652156">0744 652 156</a></div>
+        <a href="index.html#formular" class="nav-cta">Solicita oferta</a>
+      </div>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Legislatie</span>
+      </div>
+      <h1>Legislatie in vigoare pentru <em>asociatii de proprietari</em></h1>
+      <p class="page-hero-desc">Cadrul legal care reglementeaza organizarea si functionarea asociatiilor de proprietari din Romania. MP Group aplica orice modificare legislativa imediat.</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+
+    <div class="lege-grid">
+      <div class="lege-card">
+        <div class="lege-num">196</div>
+        <div class="lege-name">Legea 196/2018</div>
+        <div class="lege-desc">Legea privind infiintarea, organizarea si functionarea asociatiilor de proprietari si administrarea condominiilor. In vigoare din 28 septembrie 2018, aceasta este legea principala care reglementeaza in prezent activitatea asociatiilor de proprietari.</div>
+        <span class="lege-badge">In vigoare</span>
+      </div>
+      <div class="lege-card">
+        <div class="lege-num">230</div>
+        <div class="lege-name">Legea 230/2007</div>
+        <div class="lege-desc">Legea privind infiintarea, organizarea si functionarea asociatiilor de proprietari. A fost legea de baza pana la intrarea in vigoare a Legii 196/2018. Partial abrogata, dar relevanta pentru intelegerea evolutiei cadrului legal.</div>
+        <span class="lege-badge" style="background:#f0f0f0;color:#888;">Partial abrogata</span>
+      </div>
+      <div class="lege-card">
+        <div class="lege-num">HG</div>
+        <div class="lege-name">HG 1588/2007</div>
+        <div class="lege-desc">Hotararea de Guvern privind normele metodologice de aplicare a Legii 230/2007. A completat cadrul legal cu detalii practice privind functionarea asociatiilor, contabilitatea si atributiile organelor de conducere.</div>
+        <span class="lege-badge" style="background:#f0f0f0;color:#888;">Norme de aplicare</span>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <div class="section-title-red">Ce reglementeaza Legea 196/2018</div>
+      <p>Legea 196 din 20 iulie 2018 este actul normativ care guverneaza in prezent intreaga activitate a asociatiilor de proprietari din Romania. Aceasta reglementeaza infiintarea, organizarea, functionarea si administrarea condominiilor, inlocuind in cea mai mare parte prevederile Legii 230/2007.</p>
+      <p>Principalele aspecte reglementate de Legea 196/2018 includ: <strong>structura de conducere a asociatiei</strong> (presedinte, comitet executiv, cenzor), <strong>atributiile administratorului</strong> si conditiile de atestat, <strong>obligatiile financiare</strong> ale proprietarilor, <strong>constituirea fondurilor</strong> (rulment, reparatii), <strong>drepturile de acces</strong> la informatii si <strong>procedura de recuperare</strong> a debitelor.</p>
+      <p>MP Group aplica toate prevederile Legii 196/2018 si urmareste orice modificare legislativa pentru a asigura conformitatea permanenta a asociatiilor din administrarea noastra.</p>
+    </div>
+
+    <div class="info-block">
+      <div class="section-title-red">Obligatii legale ale administratorului</div>
+      <p>Conform Legii 196/2018, administratorul unui condominiu trebuie sa detina un <strong>certificat de calificare profesionala</strong> si un <strong>atestat</strong> eliberat de autoritatea locala competenta. De asemenea, are obligatia de a incheia o <strong>polita de asigurare de raspundere profesionala</strong> in valoare de cel putin 50.000 Euro.</p>
+      <p>Administratorul raspunde in fata adunarii generale pentru toate actele si faptele sale in exercitarea mandatului. Evidenta contabila se tine in partida simpla, conform normelor specifice asociatiilor de proprietari, iar toate documentele financiare sunt accesibile proprietarilor la cerere.</p>
+    </div>
+
+    <div class="info-block">
+      <div class="section-title-red">Evolutia cadrului legislativ</div>
+      <p>Activand in domeniu din 1992, MP Group a respectat fiecare etapa a evolutiei legislative. Am aplicat <strong>Legea 114 din 1996</strong> (prima lege a locuintei), apoi <strong>Legea 230/2007</strong> impreuna cu <strong>HG 1588/2007</strong>, si din septembrie 2018 <strong>Legea 196/2018</strong>.</p>
+      <p>Experienta acumulata in peste 30 de ani de activitate ne permite sa gestionam orice tranzitie legislativa fara disfunctii pentru asociatiile partenere.</p>
+    </div>
+
+    <div class="cta-box">
+      <p>Aveti intrebari despre aplicarea legislatiei in asociatia dumneavoastra? Echipa MP Group va sta la dispozitie cu informatii si servicii de administrare conforme cu toate prevederile legale.</p>
+      <a href="index.html#formular">Solicita o consultatie</a>
+    </div>
+
+  </div>
+
+  <footer style="background:#111;padding:0;margin-top:0;">
+    <div style="max-width:1600px;margin:0 auto;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px;color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti</span>
+      <div style="display:flex;gap:20px;">
+        <a href="termeni.html" style="font-size:11px;color:#333;text-decoration:none;">Termeni</a>
+        <a href="confidentialitate.html" style="font-size:11px;color:#333;text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px;color:#333;text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">MP<span>Group</span></span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <div class="mobile-section-title">Servicii</div>
+        <div class="mobile-sub">
+          <a href="administrare-financiara.html">Administrare financiara</a>
+          <a href="incasare-cote.html">Incasare cote intretinere</a>
+          <a href="verificari-contabile.html">Verificari financiar-contabile</a>
+          <a href="administrare-tehnica.html">Administrare tehnica</a>
+          <a href="cenzorat.html">Cenzorat asociatii</a>
+        </div>
+        <div class="mobile-section-title">Zone</div>
+        <div class="mobile-sub">
+          <a href="sector-1.html">Sector 1</a>
+          <a href="sector-2.html">Sector 2</a>
+          <a href="sector-3.html">Sector 3</a>
+          <a href="sector-4.html">Sector 4</a>
+          <a href="sector-5.html">Sector 5</a>
+          <a href="sector-6.html">Sector 6</a>
+          <a href="voluntari.html">Voluntari</a>
+          <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+          <a href="ploiesti.html">Ploiesti</a>
+        </div>
+        <a href="legislatie.html">Legislatie</a>
+        <a href="sesizari.html">Sesizari</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#formular" onclick="toggleMobileMenu()">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <div class="mobile-phones">
+          <a href="tel:+40213320392">021 332 0392</a>
+          <a href="tel:+40744652156">0744 652 156</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!hamburger || !menu) return;
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      });
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) {
+          menu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var hamburger = document.querySelector('.hamburger');
+      if (!menu || !hamburger) return;
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+
+</body>
+</html>
