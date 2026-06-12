@@ -1032,7 +1032,14 @@
 
     @media (max-width: 768px) {
       /* Topbar */
-      .topbar-inner { padding: 0 16px; }
+      .topbar-inner {
+      max-width: 100%;
+      margin: 0;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
       .topbar-text { display: none; }
 
       /* Navbar */
@@ -1358,7 +1365,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:var(--font-body,'Nunito',sans-serif);font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:Montserrat,sans-serif;font-size:28px;font-weight:900;color:#111;letter-spacing:-2px;line-height:1;text-shadow:0 0 1px #111;"><b>MP</b><span style="color:#cc2222;"><b>Group</b></span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#">Servicii</a>
@@ -1381,6 +1388,7 @@
             <a href="sector-6.html">Sector 6</a>
             <a href="voluntari.html">Voluntari</a>
             <a href="popesti-leordeni.html">Popesti-Leordeni</a>
+            <a href="ploiesti.html">Ploiesti</a>
           </div>
         </li>
         <li><a href="legislatie.html">Legislatie</a></li>
