@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Administrare Blocuri Ploiesti | MP Group SRL – Administrator Atestat, Servicii Complete</title>
-  <meta name="description" content="Servicii de administrare blocuri in Ploiesti. Administrator atestat, contabilitate asociatii proprietari, incasare cote intretinere, administrare tehnica. MP Group – din 1992." />
+  <meta name="description" content="Servicii de administrare blocuri in Ploiesti. Administrator atestat, contabilitate asociatii proprietari, incasare cote intretinere, administrare tehnica. MP Group din 1992." />
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <style>
@@ -29,7 +29,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); }
+    .topbar-text { font-size: 12px; color: rgba(255,255,255,0.85); letter-spacing: 0.02em; }
     .topbar-contact { display: flex; align-items: center; gap: 20px; }
     .topbar-contact a { font-size: 12px; color: #fff; font-weight: 500; }
     .topbar-contact a:hover { text-decoration: underline; }
@@ -51,7 +51,7 @@
     .nav-links a:hover, .nav-links a.active { color: var(--red); }
     .has-dropdown { position: relative; }
     .has-dropdown:hover .dropdown { display: block; }
-    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 220px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--gray-border); border-top: 2px solid var(--red); min-width: 200px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 200; }
     .dropdown a { display: block; padding: 10px 16px; font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; border-bottom: 1px solid var(--gray-border); }
     .dropdown a:last-child { border-bottom: none; }
     .dropdown a:hover { background: var(--gray-bg); color: var(--red); }
@@ -65,25 +65,43 @@
     .page-hero { background: var(--black); padding: 52px 60px; border-bottom: 3px solid var(--red); }
     .page-hero-inner { max-width: 1600px; margin: 0 auto; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
-    .breadcrumb a { font-size: 12px; color: #666; }
+    .breadcrumb a { font-size: 12px; color: #666; transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--red); }
     .breadcrumb span, .breadcrumb-sep { font-size: 12px; color: #444; }
     .page-hero h1 { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
     .page-hero h1 em { font-style: italic; color: var(--red); }
     .page-hero-desc { font-size: 15px; color: #888; max-width: 620px; line-height: 1.7; }
-    .legal-body { max-width: 860px; margin: 0 auto; padding: 60px; }
-    .legal-body h2 { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--black); margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--red); }
-    .legal-body h3 { font-size: 14px; font-weight: 700; color: var(--black); margin: 20px 0 8px; }
-    .legal-body p { font-size: 14px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 12px; }
-    .legal-body ul, .legal-body ol { font-size: 14px; color: var(--gray-mid); line-height: 1.8; margin: 8px 0 12px 20px; }
-    .legal-body li { margin-bottom: 6px; }
-    .legal-body strong { color: var(--black); font-weight: 600; }
-    .legal-body a { color: var(--red); }
-    .legal-body a:hover { text-decoration: underline; }
-    .legal-update { font-size: 12px; color: var(--gray-light); margin-bottom: 32px; }
-    .legal-links { display: flex; gap: 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--gray-border); }
-    .legal-links a { font-size: 13px; color: var(--red); font-weight: 500; }
-    .legal-links a:hover { text-decoration: underline; }
+    .page-body { max-width: 1600px; margin: 0 auto; padding: 60px; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; }
+    .content-section { margin-bottom: 40px; }
+    .content-section:last-child { margin-bottom: 0; }
+    .section-title-red { font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 20px; }
+    .content-block p { font-size: 14px; color: var(--gray-mid); line-height: 1.75; margin-bottom: 10px; }
+    .content-block p:last-child { margin-bottom: 0; }
+    .content-block p strong { color: var(--black); font-weight: 600; }
+    .servicii-list { list-style: none; margin-top: 8px; }
+    .servicii-list li { padding: 10px 0; border-bottom: 1px solid var(--gray-border); font-size: 14px; color: var(--gray-mid); display: flex; align-items: center; gap: 10px; }
+    .servicii-list li:last-child { border-bottom: none; }
+    .servicii-list li::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+    .servicii-list a { color: var(--red); font-weight: 500; }
+    .servicii-list a:hover { text-decoration: underline; }
+    .delimitari-box { background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 4px; padding: 24px; margin-top: 8px; }
+    .delimitari-box p { font-size: 13px; color: var(--gray-mid); line-height: 1.75; }
+    .testimonial-card { background: var(--gray-bg); border-left: 3px solid var(--red); padding: 20px 24px; border-radius: 0 4px 4px 0; margin-top: 8px; }
+    .testimonial-card p { font-size: 14px; color: var(--gray-dark); line-height: 1.7; font-style: italic; }
+    .sidebar { position: sticky; top: 90px; }
+    .sidebar-box { background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 4px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-box-title { font-size: 12px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { border-bottom: 1px solid var(--gray-border); }
+    .sidebar-links li:last-child { border-bottom: none; }
+    .sidebar-links a { display: block; padding: 10px 0; font-size: 13px; color: var(--gray-dark); transition: color 0.2s; }
+    .sidebar-links a:hover, .sidebar-links a.active { color: var(--red); font-weight: 600; }
+    .sidebar-contact { background: var(--black); border-radius: 4px; padding: 24px; text-align: center; }
+    .sidebar-contact p { font-size: 13px; color: #888; margin-bottom: 16px; line-height: 1.6; }
+    .sidebar-contact a.btn { display: block; background: var(--red); color: var(--white); font-size: 13px; font-weight: 600; padding: 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; transition: background 0.2s; margin-bottom: 10px; }
+    .sidebar-contact a.btn:hover { background: var(--red-dark); }
+    .sidebar-contact a.tel { font-size: 16px; font-weight: 600; color: var(--white); display: block; margin-top: 4px; }
+    .sidebar-contact a.tel:hover { color: var(--red); }
     footer { background: var(--black); padding: 48px 60px 28px; margin-top: 80px; }
     .footer-inner { max-width: 1600px; margin: 0 auto; }
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #222; }
@@ -94,15 +112,13 @@
     .footer-col ul li { margin-bottom: 8px; }
     .footer-col ul li a { font-size: 13px; color: #666; transition: color 0.2s; }
     .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom { padding-top: 24px; }
     .footer-copy { font-size: 12px; color: #444; }
-    .footer-legal { display: flex; gap: 16px; }
-    .footer-legal a { font-size: 12px; color: #555; transition: color 0.2s; }
-    .footer-legal a:hover { color: var(--white); }
     @media (max-width: 960px) {
       .topbar-inner, .nav-inner { padding: 0 24px 0 0; }
       .page-hero { padding: 40px 24px; }
-      .legal-body { padding: 36px 24px; }
+      .page-body { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
+      .sidebar { position: static; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .topbar-text { display: none; }
@@ -216,9 +232,9 @@
   <meta name="bingbot" content="index, follow" />
   <meta name="author" content="MP Group SRL" />
   <meta name="copyright" content="MP Group SRL" />
-  <meta name="keywords" content="administrare blocuri ploiesti, administrator bloc ploiesti prahova, firma administrare blocuri ploiesti, asociatie proprietari ploiesti, administrare imobile ploiesti, administrator atestat ploiesti, contabilitate asociatie proprietari ploiesti, liste intretinere ploiesti, fond reparatii ploiesti, schimbare administrator ploiesti, oferta administrare bloc ploiesti, servicii administrare bloc prahova" />
+  <meta name="keywords" content="administrare blocuri sector 1 bucuresti, administrator bloc sector 1, firma administrare sector 1, asociatie proprietari sector 1, administrator atestat sector 1, administrare bloc aviatiei, administrare bloc baneasa, administrare bloc dorobanti, administrare bloc floreasca, administrare bloc victoriei, administrare bloc herastrau, administrare bloc primaverii, administrare bloc kiseleff, administrare bloc calea victoriei, administrare bloc piata romana, administrare bloc piata victoriei, schimbare administrator sector 1, oferta administrare bloc sector 1, primaria sector 1 administrator bloc" />
   <meta name="geo.region" content="RO" />
-  <meta name="geo.placename" content="Ploiesti, Prahova, Romania" />
+  <meta name="geo.placename" content="Sector 1, Bucuresti, Romania" />
   <meta name="geo.position" content="44.4268;26.1025" />
   <meta name="ICBM" content="44.4268, 26.1025" />
   <meta name="language" content="Romanian" />
@@ -235,8 +251,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Administrare Blocuri Ploiesti | MP Group SRL – Administrator Atestat, Servicii Complete" />
-  <meta property="og:description" content="Servicii de administrare blocuri in Ploiesti. Administrator atestat, contabilitate asociatii proprietari, incasare cote intretinere, administrare tehnica. MP Group – din 1992." />
+  <meta property="og:title" content="Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei" />
+  <meta property="og:description" content="Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992." />
   <meta property="og:url" content="https://www.mpgroupsrl.ro/ploiesti.html" />
   <meta property="og:site_name" content="MP Group SRL – Administrare Blocuri Bucuresti" />
   <meta property="og:locale" content="ro_RO" />
@@ -247,8 +263,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Administrare Blocuri Ploiesti | MP Group SRL – Administrator Atestat, Servicii Complete" />
-  <meta name="twitter:description" content="Servicii de administrare blocuri in Ploiesti. Administrator atestat, contabilitate asociatii proprietari, incasare cote intretinere, administrare tehnica. MP Group – din 1992." />
+  <meta name="twitter:title" content="Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei" />
+  <meta name="twitter:description" content="Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992." />
   <meta name="twitter:image" content="https://www.mpgroupsrl.ro/logo.png" />
   <meta name="twitter:image:alt" content="MP Group SRL – Administrare Blocuri Bucuresti" />
 
@@ -257,8 +273,8 @@
   {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Administrare Blocuri Ploiesti | MP Group SRL – Administrator Atestat, Servicii Complete",
-  "description": "Servicii de administrare blocuri in Ploiesti. Administrator atestat, contabilitate asociatii proprietari, incasare cote intretinere, administrare tehnica. MP Group – din 1992.",
+  "name": "Administrare Blocuri Sector 1 Bucuresti | MP Group – Aviatiei, Dorobanti, Floreasca, Victoriei",
+  "description": "Administrare blocuri Sector 1 Bucuresti: Aviatiei, Baneasa, Dorobanti, Floreasca, Victoriei, Herastrau, Kiseleff, Primaverii. Administrator atestat, contabilitate, tehnic. MP Group din 1992.",
   "url": "https://www.mpgroupsrl.ro/ploiesti.html",
   "provider": {
     "@type": "LocalBusiness",
@@ -308,21 +324,29 @@
 </head>
 <body>
 
-      <div class="topbar">
+    <div class="topbar">
     <div class="topbar-inner">
       <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
       <div class="topbar-contact">
-        <a href="tel:+40213320392"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg> 021 332 0392</a>
-        <a href="tel:+40744652156"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg> 0744 652 156</a>
+        <a href="tel:+40213320392">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          021 332 0392
+        </a>
+        <a href="tel:+40744652156">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.86 2.82 2 2 0 012.84 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121 16z"/></svg>
+          0744 652 156
+        </a>
         <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
-      <nav>
+
+    <nav>
     <div class="nav-inner">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><b style="font-family:Montserrat,sans-serif;font-size:26px;color:#111;letter-spacing:-1px;">MP<span style="color:#cc2222;">Group</span></b></a>
       <ul class="nav-links">
-        <li class="has-dropdown"><a href="#">Servicii</a>
+        <li class="has-dropdown">
+          <a href="#">Servicii</a>
           <div class="dropdown">
             <a href="administrare-financiara.html">Administrare financiara</a>
             <a href="incasare-cote.html">Incasare cote intretinere</a>
@@ -331,7 +355,8 @@
             <a href="cenzorat.html">Cenzorat asociatii</a>
           </div>
         </li>
-        <li class="has-dropdown"><a href="#">Zone</a>
+        <li class="has-dropdown">
+          <a href="#">Zone</a>
           <div class="dropdown">
             <a href="sector-1.html">Sector 1</a>
             <a href="sector-2.html">Sector 2</a>
@@ -359,65 +384,122 @@
 
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb"><a href="index.html">Acasa</a><span class="breadcrumb-sep">/</span><a href="index.html#zone">Zone</a><span class="breadcrumb-sep">/</span><span>Ploiesti</span></div>
+      <div class="breadcrumb">
+        <a href="index.html">Acasa</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#zone">Zone</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Ploiesti</span>
+      </div>
       <h1>Administrare blocuri <em>Ploiesti</em></h1>
-      <p class="page-hero-desc">Servicii complete de administrare blocuri si imobile pentru ansamblurile rezidentiale si asociatiile de proprietari din Ploiesti. Administrator atestat, experti contabili autorizati, personal tehnic specializat.</p>
+      <p class="page-hero-desc">Servicii complete de administrare blocuri si imobile pentru asociatiile de proprietari din Ploiesti, judetul Prahova. Administrator atestat, experti contabili, personal tehnic. MP Group.</p>
     </div>
   </div>
 
-  <div style="max-width:1600px;margin:0 auto;padding:60px;display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;">
+  <div class="page-body">
     <main>
-      <div style="margin-bottom:40px;">
-        <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding-bottom:10px;border-bottom:2px solid #cc2222;margin-bottom:20px;">Servicii de administrare in Ploiesti</div>
-        <p style="font-size:14px;color:#555;line-height:1.75;margin-bottom:10px;">Ne ocupam de administrarea blocurilor si a ansamblurilor rezidentiale din Ploiesti, indiferent daca sunt sau nu constituite in asociatii de proprietari. Punem la dispozitie administrator cu certificat de calificare si atestat, experti contabili autorizati, personal tehnic specializat si un angajament constant de a oferi un serviciu de calitate.</p>
-        <p style="font-size:14px;color:#555;line-height:1.75;margin-bottom:10px;">Mentinem o relatie activa cu factorii responsabili din Ploiesti — Primaria Ploiesti si Politia locala Ploiesti — pentru o administrare eficienta si in deplina conformitate cu legislatia in vigoare.</p>
-        <p style="font-size:14px;color:#555;line-height:1.75;">Serviciile sunt prestate in baza hotararii adunarii generale a asociatiei, cu care se semneaza contractul de prestari servicii. Acesta poate fi incheiat pe durata determinata cu posibilitate de prelungire, sau pe durata nedeterminata cu posibilitate de reziliere la initiativa asociatiei.</p>
+
+      <div class="content-section">
+        <div class="section-title-red">Despre serviciul nostru in Ploiesti</div>
+        <div class="content-block">
+          <p>Gestionam administrarea blocurilor pentru asociatiile de proprietari din Ploiesti. Punem la dispozitie administrator cu certificat de calificare si atestat, experti contabili autorizati, personal tehnic specializat si o dedicatie constanta pentru a oferi un serviciu de calitate.</p>
+          <p>Mentinem o relatie activa cu factorii responsabili din Ploiesti — Primaria Municipiului Ploiesti si Politia locala Ploiesti — pentru o administrare eficienta si in deplina conformitate cu legislatia in vigoare.</p>
+          <p>Serviciile sunt prestate in baza hotararii adunarii generale a asociatiei de proprietari, cu care se incheie contractul de prestari servicii. Acesta poate fi pe durata determinata cu posibilitate de prelungire, sau pe durata nedeterminata cu posibilitate de reziliere la initiativa asociatiei.</p>
+        </div>
       </div>
-      <div style="margin-bottom:40px;">
-        <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding-bottom:10px;border-bottom:2px solid #cc2222;margin-bottom:20px;">Polita de asigurare profesionala</div>
-        <p style="font-size:14px;color:#555;line-height:1.75;">Conform prevederilor Legii 196/2018, MP Group ofera fiecarei asociatii partenere o <strong style="color:#111;">polita de asigurare de raspundere profesionala de 50.000 Euro</strong>, valabila pe intreaga durata a colaborarii. Asociatia este astfel protejata legal in orice situatie.</p>
+
+      <div class="content-section">
+        <div class="section-title-red">Contract si polita de asigurare</div>
+        <div class="content-block">
+          <p>Conform prevederilor Legii 196/2018, MP Group pune la dispozitia fiecarei asociatii cu care colaboreaza o <strong>polita de asigurare de raspundere profesionala in valoare de 50.000 Euro</strong>, valabila pe toata durata contractului. Asociatia este astfel protejata legal pe intreaga perioada a colaborarii.</p>
+        </div>
       </div>
-      <div style="margin-bottom:40px;">
-        <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding-bottom:10px;border-bottom:2px solid #cc2222;margin-bottom:20px;">Conformitate legislativa</div>
-        <p style="font-size:14px;color:#555;line-height:1.75;margin-bottom:10px;">Activam in administrarea imobilelor din 1992 si am respectat fiecare cadru legal: Legea 114 din 1996, Legea 230 din 2007 cu HG 1588 din 2007, si din septembrie 2018 <strong style="color:#111;">Legea 196/2018</strong>. Orice modificare legislativa este implementata imediat.</p>
+
+      <div class="content-section">
+        <div class="section-title-red">Conformitate legislativa</div>
+        <div class="content-block">
+          <p>Toate serviciile prestate de MP Group respecta in cele mai mici detalii legislatia in vigoare. Incepand din 1992, ne-am adaptat continuu la fiecare cadru legal: Legea 114 din 1996, Legea 230 din 2007 cu HG 1588 din 2007, si, incepand cu 28 septembrie 2018, <strong>Legea 196/2018</strong> — legea care reglementeaza in prezent organizarea si functionarea asociatiilor de proprietari.</p>
+          <p>Orice modificare legislativa este implementata fara intarziere, astfel incat asociatiile administrate de noi nu intampina probleme legale sau fiscale.</p>
+        </div>
       </div>
-      <div style="margin-bottom:40px;">
-        <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding-bottom:10px;border-bottom:2px solid #cc2222;margin-bottom:20px;">Servicii disponibile in Ploiesti</div>
-        <ul style="list-style:none;">
-          <li style="padding:10px 0;border-bottom:1px solid #e0e0e0;font-size:14px;color:#555;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;background:#cc2222;border-radius:50%;flex-shrink:0;display:inline-block;"></span><a href="administrare-financiara.html" style="color:#cc2222;font-weight:500;">Administrare financiara</a> — intocmire liste intretinere, evidenta contabila</li>
-          <li style="padding:10px 0;border-bottom:1px solid #e0e0e0;font-size:14px;color:#555;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;background:#cc2222;border-radius:50%;flex-shrink:0;display:inline-block;"></span><a href="incasare-cote.html" style="color:#cc2222;font-weight:500;">Incasare cote intretinere</a> — numerar, card, online, mobilpay, paypoint</li>
-          <li style="padding:10px 0;border-bottom:1px solid #e0e0e0;font-size:14px;color:#555;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;background:#cc2222;border-radius:50%;flex-shrink:0;display:inline-block;"></span><a href="verificari-contabile.html" style="color:#cc2222;font-weight:500;">Verificari financiar-contabile</a> — exclusiv la cererea asociatiei</li>
-          <li style="padding:10px 0;font-size:14px;color:#555;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;background:#cc2222;border-radius:50%;flex-shrink:0;display:inline-block;"></span><a href="administrare-tehnica.html" style="color:#cc2222;font-weight:500;">Administrare tehnica</a> — monitorizare, dispecerat urgenta, supervizare lucrari</li>
+
+      <div class="content-section">
+        <div class="section-title-red">Servicii disponibile in Ploiesti</div>
+        <ul class="servicii-list">
+          <li><a href="administrare-financiara.html">Administrare financiara</a> — intocmire liste intretinere, evidenta contabila</li>
+          <li><a href="incasare-cote.html">Incasare cote intretinere</a> — numerar, card, online, mobilpay, paypoint</li>
+          <li><a href="verificari-contabile.html">Verificari financiar-contabile</a> — exclusiv la cererea asociatiei</li>
+          <li><a href="administrare-tehnica.html">Administrare tehnica</a> — monitorizare, dispecerat urgenta, supervizare lucrari</li>
         </ul>
       </div>
-      <div style="background:#f7f7f7;border-left:3px solid #cc2222;padding:20px 24px;border-radius:0 4px 4px 0;">
-        <p style="font-size:14px;color:#333;line-height:1.7;font-style:italic;">Pentru orice solicitare legata de administrarea blocurilor din Ploiesti, ne puteti contacta prin formularul de mai jos sau direct la numerele de telefon afisate. Raspundem in cel mai scurt timp posibil.</p>
+
+      <div class="content-section">
+        <div class="section-title-red">Cartierele din Ploiesti</div>
+        <div class="content-block">
+          <p>Administram blocuri in toate cartierele Ploiestiului: Mihai Bravu, Odobesti, Democratiei, Vest, Buna Vestire, Enachita Vacarescu, Bereasca, Eroilor, Republicii si alte zone rezidentiale. Cunoastem specificul fiecarui cartier si al blocurilor din zona.</p>
+        </div>
       </div>
+
+      <div class="content-section">
+        <div class="section-title-red">Vocea clientului</div>
+        <div class="testimonial-card">
+          <p>De cand administrarea blocului nostru a fost preluata de MP Group nu mai avem neintelegerile de altadata legate de listele de intretinere. Totul este atat de clar si transparent incat nu mai exista subiecte de cearta. Multumim si tineti-o tot asa!</p>
+        </div>
+      </div>
+
     </main>
-    <aside style="position:sticky;top:90px;">
-      <div style="background:#f7f7f7;border:1px solid #e0e0e0;border-radius:4px;padding:24px;margin-bottom:20px;">
-        <div style="font-size:12px;font-weight:700;color:#cc2222;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #e0e0e0;">Zone deservite</div>
-        <ul style="list-style:none;">
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-1.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 1</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-2.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 2</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-3.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 3</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-4.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 4</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-5.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 5</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="sector-6.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Sector 6</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="voluntari.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Voluntari</a></li>
-          <li style="border-bottom:1px solid #e0e0e0;"><a href="popesti-leordeni.html" style="display:block;padding:10px 0;font-size:13px;color:#333;">Popesti-Leordeni</a></li>
-          <li><a href="ploiesti.html" style="display:block;padding:10px 0;font-size:13px;color:#cc2222;font-weight:600;">Ploiesti</a></li>
+
+    <aside class="sidebar">
+    <div style="background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:24px;margin-bottom:24px;">
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#111;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #e0e0e0;">Cerere de oferta</h4>
+      <form onsubmit="trimiteOfertaPage(event)">
+        <div style="margin-bottom:12px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Nume si prenume *</label><input type="text" id="pf-nume" required placeholder="ex. Ion Popescu" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" /></div>
+        <div style="margin-bottom:12px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Telefon *</label><input type="tel" id="pf-tel" required placeholder="07xx xxx xxx" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" /></div>
+        <div style="margin-bottom:12px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Email *</label><input type="email" id="pf-email" required placeholder="adresa@email.ro" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" /></div>
+        <div style="margin-bottom:12px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Adresa imobil *</label><input type="text" id="pf-adresa" required placeholder="Strada, nr., sector" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" /></div>
+        <div style="margin-bottom:12px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Numar apartamente *</label><input type="number" id="pf-apartamente" required placeholder="ex. 48" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" /></div>
+        <div style="margin-bottom:16px;"><label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Mesaj</label><textarea id="pf-mesaj" rows="4" placeholder="Descrieti pe scurt situatia actuala a asociatiei..." style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;resize:vertical;font-family:inherit;box-sizing:border-box;"></textarea></div>
+        <button type="submit" style="width:100%;background:#cc2222;color:#fff;font-size:14px;font-weight:700;padding:13px;border:none;border-radius:3px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;">Trimite cererea</button>
+      </form>
+    </div>
+    <script>
+    if(typeof trimiteOfertaPage === 'undefined') {
+      function trimiteOfertaPage(e) {
+        e.preventDefault();
+        var n=document.getElementById('pf-nume').value, t=document.getElementById('pf-tel').value, em=document.getElementById('pf-email').value, a=document.getElementById('pf-adresa').value, ap=document.getElementById('pf-apartamente').value, m=document.getElementById('pf-mesaj').value;
+        var s=encodeURIComponent('Cerere oferta administrare bloc - '+n);
+        var b=encodeURIComponent('Nume: '+n+'\nTelefon: '+t+'\nEmail: '+em+'\nAdresa: '+a+'\nApartamente: '+ap+'\nMesaj: '+(m||'-')+'\n\nTrimis din mpgroupsrl.ro');
+        window.location.href='mailto:info@mpgroupsrl.ro?subject='+s+'&body='+b;
+      }
+    }
+    </script>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Zone deservite</div>
+        <ul class="sidebar-links">
+          <li><a href="sector-1.html">Sector 1</a></li>
+          <li><a href="sector-2.html">Sector 2</a></li>
+          <li><a href="sector-3.html">Sector 3</a></li>
+          <li><a href="sector-4.html">Sector 4</a></li>
+          <li><a href="sector-5.html">Sector 5</a></li>
+          <li><a href="sector-6.html">Sector 6</a></li>
+          <li><a href="voluntari.html">Voluntari</a></li>
+          <li><a href="popesti-leordeni.html">Popesti-Leordeni</a></li>
+          <li><a href="ploiesti.html" class="active">Ploiesti</a></li>
         </ul>
       </div>
-      <div style="background:#111;border-radius:4px;padding:24px;text-align:center;">
-        <p style="font-size:13px;color:#888;margin-bottom:16px;line-height:1.6;">Solicita o oferta pentru blocul tau din Ploiesti.</p>
-        <a href="index.html#formular" style="display:block;background:#cc2222;color:#fff;font-size:13px;font-weight:600;padding:12px;border-radius:3px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Solicita oferta</a>
-        <a href="tel:+40744652156" style="font-size:16px;font-weight:600;color:#fff;display:block;margin-top:4px;">0744 652 156</a>
-          </div>
-    </div>
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Servicii</div>
+        <ul class="sidebar-links">
+          <li><a href="administrare-financiara.html">Administrare financiara</a></li>
+          <li><a href="incasare-cote.html">Incasare cote</a></li>
+          <li><a href="verificari-contabile.html">Verificari contabile</a></li>
+          <li><a href="administrare-tehnica.html">Administrare tehnica</a></li>
+          <li><a href="cenzorat.html">Cenzorat asociatii</a></li>
+        </ul>
+      </div>
     </aside>
   </div>
-
 
     <!-- FOOTER -->
   <footer>
@@ -503,7 +585,7 @@
         <a href="index.html#formular" onclick="toggleMobileMenu()">Contact</a>
       </div>
       <div class="mobile-menu-footer">
-        <a href="#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
+        <a href="index.html#formular" class="mobile-cta" onclick="toggleMobileMenu()">Solicita oferta gratuita</a>
         <div class="mobile-phones">
           <a href="tel:+40213320392">021 332 0392</a>
           <a href="tel:+40744652156">0744 652 156</a>
@@ -517,8 +599,7 @@
       var menu = document.getElementById("mobileMenu");
       if (!hamburger || !menu) return;
       hamburger.addEventListener("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+        e.preventDefault(); e.stopPropagation();
         menu.classList.toggle("open");
         hamburger.classList.toggle("active");
         document.body.style.overflow = menu.classList.contains("open") ? "hidden" : "";
