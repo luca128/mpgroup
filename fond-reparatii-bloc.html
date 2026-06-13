@@ -284,7 +284,7 @@
   <!-- ===== END SEO ===== -->
 </head>
 <body>
-        <div class="topbar">
+      <div class="topbar">
     <div class="topbar-inner">
       <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
       <div class="topbar-contact">
@@ -294,9 +294,9 @@
       </div>
     </div>
   </div>
-        <nav>
+      <nav>
     <div class="nav-inner">
-      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:Montserrat,sans-serif;font-size:28px;font-weight:900;color:#111;letter-spacing:-2px;line-height:1;text-shadow:0 0 1px #111;"><b>MP</b><span style="color:#cc2222;"><b>Group</b></span></span></a>
+      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><span style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown"><a href="#">Servicii</a>
           <div class="dropdown">
@@ -351,12 +351,6 @@
   </div>
   <div class="article-body">
 
-    <div class="article-cta">
-      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
-      <a href="index.html#formular">Solicita oferta gratuita</a>
-    </div>
-
-
     <p>Fondul de reparatii este unul dintre cele mai importante instrumente financiare ale unei asociatii de proprietari. Constituit corect si gestionat transparent, el permite finantarea lucrarilor necesare fara sa puna presiune brusca pe proprietari. Neglijat, poate lasa blocul fara resurse in momentul in care apar probleme serioase.</p>
 
     <h2>Ce este fondul de reparatii</h2>
@@ -387,7 +381,10 @@
     <h2>Transparenta fondului de reparatii</h2>
     <p>Proprietarii au dreptul sa cunoasca in orice moment soldul fondului de reparatii, intrarile si iesirile din cont si destinatia fiecarei sume cheltuite. Un administrator serios pune aceste informatii la dispozitie lunar, fie prin lista de intretinere, fie printr-o platforma online dedicata.</p>
 
-    
+    <div class="article-cta">
+      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
+      <a href="index.html#formular">Solicita oferta gratuita</a>
+    </div>
   </div>
   <div class="related-articles">
     <div class="related-inner">
@@ -426,7 +423,7 @@
   </a>
 
   <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-panel">
       <div class="mobile-menu-header">
         <span class="mobile-menu-logo">MP<span>Group</span></span>
@@ -469,14 +466,14 @@
       </div>
     </div>
   </div>
-  </div>
-    <script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       var hamburger = document.querySelector('.hamburger');
       var menu = document.getElementById('mobileMenu');
       if (!hamburger || !menu) return;
       hamburger.addEventListener('click', function(e) {
-        e.preventDefault(); e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         menu.classList.toggle('open');
         hamburger.classList.toggle('active');
         document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';

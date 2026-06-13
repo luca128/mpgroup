@@ -352,21 +352,6 @@
       .nav-right { display: none !important; }
       .hamburger { display: flex !important; margin-left: auto; }
     }
-  
-    @media (max-width: 960px) {
-      .page-body { display: flex !important; flex-direction: column !important; }
-      .sidebar { order: -1 !important; position: static !important; width: 90% !important; max-width: 400px !important; margin: 0 auto !important; padding: 0 !important; box-sizing: border-box !important; }
-    }
-  
-    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding: 48px 32px 36px; border-bottom: 1px solid #222; }
-    .footer-brand p { font-size: 13px; color: #aaa; line-height: 1.7; max-width: 260px; margin-top: 10px; }
-    .footer-col h5 { font-size: 11px; font-weight: 700; color: #cc2222; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 8px; }
-    .footer-col ul li a { font-size: 13px; color: #aaa; text-decoration: none; }
-    .footer-col ul li a:hover { color: #cc2222; }
-    .footer-bottom { padding: 18px 32px; }
-    .footer-copy { font-size: 11px; color: #555; }
   </style>
 
   <!-- ===== SEO MAXIM MP GROUP SRL ===== -->
@@ -484,7 +469,7 @@
   </div>
     <nav>
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><b style="font-family:Montserrat,sans-serif;font-size:26px;color:#111;letter-spacing:-1px;">MP<span style="color:#cc2222;">Group</span></b></a>
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><span style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown">
           <a href="#">Servicii</a>
@@ -582,54 +567,7 @@
       </div>
     </main>
     <aside class="sidebar">
-    <div style="background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:24px;margin-bottom:24px;">
-      <h4 style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#111;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #e0e0e0;">Cerere de oferta</h4>
-      <form onsubmit="trimiteOfertaPage(event)">
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Nume si prenume *</label>
-          <input type="text" id="pf-nume" required placeholder="ex. Ion Popescu" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Telefon *</label>
-          <input type="tel" id="pf-tel" required placeholder="07xx xxx xxx" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Email *</label>
-          <input type="email" id="pf-email" required placeholder="adresa@email.ro" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Adresa imobil *</label>
-          <input type="text" id="pf-adresa" required placeholder="Strada, nr., sector" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Numar apartamente *</label>
-          <input type="number" id="pf-apartamente" required placeholder="ex. 48" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom:16px;">
-          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Mesaj</label>
-          <textarea id="pf-mesaj" rows="4" placeholder="Descrieti pe scurt situatia actuala a asociatiei..." style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;resize:vertical;font-family:inherit;box-sizing:border-box;"></textarea>
-        </div>
-        <button type="submit" style="width:100%;background:#cc2222;color:#fff;font-size:14px;font-weight:700;padding:13px;border:none;border-radius:3px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;">Trimite cererea</button>
-      </form>
-    </div>
-    <script>
-    if(typeof trimiteOfertaPage === 'undefined') {
-      function trimiteOfertaPage(e) {
-        e.preventDefault();
-        var nume = document.getElementById('pf-nume').value;
-        var tel = document.getElementById('pf-tel').value;
-        var email = document.getElementById('pf-email').value;
-        var adresa = document.getElementById('pf-adresa').value;
-        var apartamente = document.getElementById('pf-apartamente').value;
-        var mesaj = document.getElementById('pf-mesaj').value;
-        var subject = encodeURIComponent('Cerere oferta administrare bloc - ' + nume);
-        var body = encodeURIComponent('Nume: ' + nume + '\nTelefon: ' + tel + '\nEmail: ' + email + '\nAdresa: ' + adresa + '\nApartamente: ' + apartamente + '\nMesaj: ' + (mesaj||'-') + '\n\nTrimis din mpgroupsrl.ro');
-        window.location.href = 'mailto:info@mpgroupsrl.ro?subject=' + subject + '&body=' + body;
-      }
-    }
-    </script>
-
-    <div class="sidebar-box">
+      <div class="sidebar-box">
         <div class="sidebar-box-title">Toate serviciile</div>
                 <ul class="sidebar-links">
           <li><a href="administrare-financiara.html"> Administrare financiara</a></li>
@@ -639,7 +577,7 @@
           <li><a href="cenzorat.html" class="active"> Cenzorat asociatii</a></li>
         </ul>
       </div>
-            <div class="sidebar-box">
+      <div class="sidebar-box">
         <div class="sidebar-box-title">Zone</div>
         <ul class="sidebar-links">
           <li><a href="sector-1.html">Sector 1</a></li>
@@ -653,55 +591,66 @@
           <li><a href="ploiesti.html">Ploiesti</a></li>
         </ul>
       </div>
+      <div class="sidebar-contact">
+        <p>Solicita o oferta pentru serviciul de cenzorat.</p>
+        <a href="index.html#formular" class="btn">Solicita oferta</a>
+        <a href="tel:+40744652156" class="tel">0744 652 156</a>
+          <div style="background:var(--white,#fff);border:1px solid var(--gray-border,#e0e0e0);border-radius:4px;padding:28px;margin-top:40px;">
+      <h4 style="font-family:var(--font-display,'Montserrat',sans-serif);font-size:16px;font-weight:700;color:#111;margin-bottom:8px;">Solicita o oferta</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:20px;line-height:1.6;">Completeaza formularul si te contactam in cel mai scurt timp.</p>
+      <form id="oferta-form-page" onsubmit="trimiteOferta(event)">
+        <div style="margin-bottom:12px;">
+          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Nume *</label>
+          <input type="text" id="p-nume" required placeholder="Nume si prenume" style="width:100%;padding:9px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;" />
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Telefon *</label>
+          <input type="tel" id="p-tel" required placeholder="07xx xxx xxx" style="width:100%;padding:9px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;" />
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Adresa imobil</label>
+          <input type="text" id="p-adresa" placeholder="Strada, nr., sector" style="width:100%;padding:9px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;font-family:inherit;" />
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">Mesaj</label>
+          <textarea id="p-mesaj" rows="3" placeholder="Scurta descriere..." style="width:100%;padding:9px 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:3px;outline:none;resize:vertical;font-family:inherit;"></textarea>
+        </div>
+        <button type="submit" style="width:100%;background:#cc2222;color:#fff;font-size:13px;font-weight:700;padding:12px;border:none;border-radius:3px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;">Trimite cererea</button>
+      </form>
+      <script>
+        function trimiteOferta(e) {
+          e.preventDefault();
+          var nume = document.getElementById('p-nume').value;
+          var tel = document.getElementById('p-tel').value;
+          var adresa = document.getElementById('p-adresa') ? document.getElementById('p-adresa').value : '';
+          var mesaj = document.getElementById('p-mesaj') ? document.getElementById('p-mesaj').value : '';
+          var subject = encodeURIComponent('Cerere oferta administrare bloc - ' + nume);
+          var body = encodeURIComponent('Nume: ' + nume + '
+Telefon: ' + tel + '
+Adresa: ' + (adresa||'-') + '
+Mesaj: ' + (mesaj||'-') + '
+
+Trimis din mpgroupsrl.ro');
+          window.location.href = 'mailto:info@mpgroupsrl.ro?subject=' + subject + '&body=' + body;
+        }
+      </script>
+    </div>
+    </div>
     </aside>
   </div>
-    <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:Montserrat,sans-serif;font-size:24px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;"><b>MP</b><span style="color:#cc2222;"><b>Group</b></span></span></a>
-          <p>Servicii de administrare blocuri si imobile pentru asociatii de proprietari din Bucuresti si Ilfov. Activi din 1992.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Servicii</h5>
-          <ul>
-            <li><a href="administrare-financiara.html">Administrare financiara</a></li>
-            <li><a href="incasare-cote.html">Incasare cote</a></li>
-            <li><a href="verificari-contabile.html">Verificari contabile</a></li>
-            <li><a href="administrare-tehnica.html">Administrare tehnica</a></li>
-            <li><a href="cenzorat.html">Cenzorat asociatii</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Zone</h5>
-          <ul>
-            <li><a href="sector-1.html">Sector 1</a></li>
-            <li><a href="sector-2.html">Sector 2</a></li>
-            <li><a href="sector-3.html">Sector 3</a></li>
-            <li><a href="sector-4.html">Sector 4</a></li>
-            <li><a href="sector-5.html">Sector 5</a></li>
-            <li><a href="sector-6.html">Sector 6</a></li>
-            <li><a href="voluntari.html">Voluntari</a></li>
-            <li><a href="popesti-leordeni.html">Popesti-Leordeni</a></li>
-            <li><a href="ploiesti.html">Ploiesti</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Informatii</h5>
-          <ul>
-            <li><a href="legislatie.html">Legislatie</a></li>
-            <li><a href="sesizari.html">Sesizari</a></li>
-            <li><a href="index.html#formular">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri Bucuresti</span>
+  <footer style="background:#111;padding:0;margin-top:0;">
+    <div style="max-width:1600px;margin:0 auto;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;">
+      <span style="font-size:11px;color:#333;">1992&ndash;2026 &copy; MP Group &mdash; Administrare blocuri si imobile Bucuresti</span>
+      <div style="display:flex;gap:20px;">
+        <a href="termeni.html" style="font-size:11px;color:#333;text-decoration:none;">Termeni si conditii</a>
+        <a href="confidentialitate.html" style="font-size:11px;color:#333;text-decoration:none;">Confidentialitate</a>
+        <a href="cookies.html" style="font-size:11px;color:#333;text-decoration:none;">Cookies</a>
       </div>
     </div>
   </footer>
-
+  <a href="https://web.whatsapp.com/send?phone=+40744652156" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:999;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">

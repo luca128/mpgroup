@@ -284,7 +284,7 @@
   <!-- ===== END SEO ===== -->
 </head>
 <body>
-        <div class="topbar">
+      <div class="topbar">
     <div class="topbar-inner">
       <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
       <div class="topbar-contact">
@@ -294,9 +294,9 @@
       </div>
     </div>
   </div>
-        <nav>
+      <nav>
     <div class="nav-inner">
-      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:Montserrat,sans-serif;font-size:28px;font-weight:900;color:#111;letter-spacing:-2px;line-height:1;text-shadow:0 0 1px #111;"><b>MP</b><span style="color:#cc2222;"><b>Group</b></span></span></a>
+      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><span style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown"><a href="#">Servicii</a>
           <div class="dropdown">
@@ -351,12 +351,6 @@
   </div>
   <div class="article-body">
 
-    <div class="article-cta">
-      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
-      <a href="index.html#formular">Solicita oferta gratuita</a>
-    </div>
-
-
     <p>Lista de intretinere este documentul lunar care arata fiecarui proprietar cat are de platit pentru cheltuielile comune ale blocului. Multi locatari primesc lista si platesc suma scrisa fara sa inteleaga cum a fost calculata. Acest ghid explica, pas cu pas, cum functioneaza intregul proces.</p>
 
     <h2>Ce cuprinde lista de intretinere</h2>
@@ -390,7 +384,10 @@
     <p>Ai dreptul sa soliciti administratorului toate documentele care au stat la baza calculului: facturile furnizorilor, indexurile citite, bazele de repartizare. Un administrator transparent le pune la dispozitie fara probleme, fie fizic, fie printr-o platforma online.</p>
     <p>Daca gasesti o eroare, sesizeaza in scris administratorul si comitetul executiv. Corectarile se opereaza in lista lunii urmatoare.</p>
 
-    
+    <div class="article-cta">
+      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
+      <a href="index.html#formular">Solicita oferta gratuita</a>
+    </div>
   </div>
   <div class="related-articles">
     <div class="related-inner">
@@ -429,7 +426,7 @@
   </a>
 
   <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-panel">
       <div class="mobile-menu-header">
         <span class="mobile-menu-logo">MP<span>Group</span></span>
@@ -472,14 +469,14 @@
       </div>
     </div>
   </div>
-  </div>
-    <script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       var hamburger = document.querySelector('.hamburger');
       var menu = document.getElementById('mobileMenu');
       if (!hamburger || !menu) return;
       hamburger.addEventListener('click', function(e) {
-        e.preventDefault(); e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         menu.classList.toggle('open');
         hamburger.classList.toggle('active');
         document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';

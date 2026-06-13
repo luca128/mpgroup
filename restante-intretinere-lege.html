@@ -284,7 +284,7 @@
   <!-- ===== END SEO ===== -->
 </head>
 <body>
-        <div class="topbar">
+      <div class="topbar">
     <div class="topbar-inner">
       <span class="topbar-text">Administrare blocuri Bucuresti si Ilfov &mdash; activi din 1992</span>
       <div class="topbar-contact">
@@ -294,9 +294,9 @@
       </div>
     </div>
   </div>
-        <nav>
+      <nav>
     <div class="nav-inner">
-      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;"><span style="font-family:Montserrat,sans-serif;font-size:28px;font-weight:900;color:#111;letter-spacing:-2px;line-height:1;text-shadow:0 0 1px #111;"><b>MP</b><span style="color:#cc2222;"><b>Group</b></span></span></a>
+      <a href="../index.html" style="text-decoration:none;display:flex;align-items:center;flex-shrink:0;"><span style="font-family:'Nunito',sans-serif;font-size:22px;font-weight:700;color:#111;letter-spacing:-0.3px;line-height:1;">MP<span style="color:#cc2222;">Group</span></span></a>
       <ul class="nav-links">
         <li class="has-dropdown"><a href="#">Servicii</a>
           <div class="dropdown">
@@ -351,12 +351,6 @@
   </div>
   <div class="article-body">
 
-    <div class="article-cta">
-      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
-      <a href="index.html#formular">Solicita oferta gratuita</a>
-    </div>
-
-
     <p>Restantele la intretinere sunt una dintre cele mai frecvente probleme cu care se confrunta asociatiile de proprietari din Bucuresti. Un proprietar care nu plateste pune presiune pe toti ceilalti, deoarece facturile furnizorilor trebuie achitate indiferent de situatie. Legea 196/2018 ofera asociatiei mai multe instrumente pentru recuperarea debitelor.</p>
 
     <h2>Ce sunt restantele la intretinere</h2>
@@ -379,7 +373,10 @@
     <p>Cea mai eficienta metoda este <strong>transparenta listelor de intretinere</strong>. Proprietarii care inteleg exact cum se calculeaza fiecare cheltuiala sunt mai motivati sa plateasca la timp. Oferirea de multiple modalitati de plata (numerar, card, online, automate) elimina barierele practice care pot duce la intarzieri.</p>
     <p>Un administrator bun monitorizeaza restantele lunar si intervine rapid, inainte ca acestea sa se acumuleze la valori greu de recuperat.</p>
 
-    
+    <div class="article-cta">
+      <p>Asociatia dumneavoastra cauta un administrator profesionist in Bucuresti? MP Group ofera servicii complete de administrare blocuri, cu administrator atestat, experti contabili autorizati si acces online gratuit pentru proprietari.</p>
+      <a href="index.html#formular">Solicita oferta gratuita</a>
+    </div>
   </div>
   <div class="related-articles">
     <div class="related-inner">
@@ -418,7 +415,7 @@
   </a>
 
   <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-panel">
       <div class="mobile-menu-header">
         <span class="mobile-menu-logo">MP<span>Group</span></span>
@@ -461,14 +458,14 @@
       </div>
     </div>
   </div>
-  </div>
-    <script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       var hamburger = document.querySelector('.hamburger');
       var menu = document.getElementById('mobileMenu');
       if (!hamburger || !menu) return;
       hamburger.addEventListener('click', function(e) {
-        e.preventDefault(); e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         menu.classList.toggle('open');
         hamburger.classList.toggle('active');
         document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
